@@ -1,0 +1,7 @@
+mixin SubscribeForm()
+  form.subscribe-form.js-subscribe-form(method="dialog")
+    .subscribe-form__input-wrapper
+      +Input("","Enter Your Email Address","text","subscribe","","subscribe__input js-subscribe-input")
+      +Button("Subscribe","Subscribe","submit").btn.btn--subscribe.js-subscribe-submit
+        include ../../../assets/icons/EnvelopeSimple.svg
+      +ModalSuccess("Email is already in use","Please try another one.") 

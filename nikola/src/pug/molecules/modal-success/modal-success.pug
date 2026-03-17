@@ -1,0 +1,7 @@
+mixin ModalSuccess(text, message)
+  dialog.modal__wrapper.js-modal-success
+    .modal__wrapper-info 
+      p.info-text= text
+      p.info-message= message
+    .modal__wrapper-button-part 
+      +Button("Close","Close","button").btn.btn--modal-closing.js-close  

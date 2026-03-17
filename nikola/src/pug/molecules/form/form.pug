@@ -1,0 +1,13 @@
+mixin Form(heading,text,action)
+  .form__wrapper
+    .form-info
+      h3.form-heading=heading 
+      p.form-text=text
+    form.form.js-form(action=action, method="dialog") 
+      +Input("Name","Harry Potter","text","fname","form-input-label js-name-label","form-input-text js-name")
+      +Input("Username","harrypotter","text","username","form-input-label js-username-label","form-input-text js-username")
+      +Input("E-mail","harrypotter@email.com","email","email","form-input-label js-email-label","form-input-text js-email")
+      +Checkbox("Accept terms and conditions.").form-checkbox.js-checkbox
+      .form__btn-div
+        +Button("Buy now","buy","submit").btn--form-buy.js-submit
+      +ModalSuccess("Congratulations!","Your order has been confirmed!")  

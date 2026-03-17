@@ -1,0 +1,32 @@
+.filter__btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+
+  .filter__text {
+    position: absolute;
+    left: 100%;
+    top: 0%;
+    bottom: 50%;
+    color: $text-color-fifth;
+    font-size: map-get($map: map-get($sizes-md, body), $key: font-size);
+    line-height: map-get($map: map-get($sizes-md, body), $key: line-height);
+  }
+}
+
+.filter__wrapper {
+  position: absolute;
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+  z-index: 100;
+  width: 100%;
+  left: 0;
+  top: 100%;
+}
+
+.filter__wrapper.open {
+  max-height: 1000px;
+}

@@ -1,0 +1,33 @@
+@import "../../../abstracts/breakpoints";
+@import "../../../abstracts/variables";
+@import "../../../base/typography";
+
+.number-input {
+  display: flex;
+  flex-wrap: nowrap;
+  font-family: $font-secondary;
+  gap: map-get($map: $spacing-sm, $key: gap-price);
+  &__decrement,
+  &__increment {
+    cursor: pointer;
+    background-color: $backgorund-color-tertiary;
+    border-radius: $border-radius-default;
+    border: $border-height-primary solid $text-color-secondary;
+    padding: map-get($map: $spacing-sm, $key: padding-11)
+      map-get($map: $spacing-sm, $key: padding-30);
+    display: flex;
+    align-items: center;
+  }
+
+  &__quantity {
+    background-color: $backgorund-color-tertiary;
+    font-size: map-get($map: map-get($sizes-sm, text), $key: font-size);
+    line-height: map-get($map: map-get($sizes-sm, text), $key: line-height);
+    color: $disabled-btn-text;
+    border-radius: $border-radius-tertiary;
+    padding-top: map-get($map: $spacing-sm, $key: padding-17);
+    padding-bottom: map-get($map: $spacing-sm, $key: padding-17);
+    padding-left: map-get($map: $spacing-sm, $key: padding-10);
+    padding-right: map-get($map: $spacing-sm, $key: padding-12);
+  }
+}

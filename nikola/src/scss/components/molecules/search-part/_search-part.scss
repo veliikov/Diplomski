@@ -1,0 +1,127 @@
+.search-wrapper {
+  background-color: $backgorund-color-primary;
+  position: relative;
+  .search-wrapper__search {
+    padding: 0 0 map-get($map: $spacing-sm, $key: padding-40);
+    display: flex;
+    flex-direction: column;
+    gap: map-get($map: $spacing-sm, $key: gap-10);
+
+    .search-btn {
+      background: transparent;
+      border: none;
+    }
+
+    .search-wrapper__title {
+      font-family: $font-primary;
+      color: $text-color-fifth;
+      font-size: map-get(
+        $map: map-get($sizes-sm, title-large),
+        $key: font-size
+      );
+      line-height: map-get(
+        $map: map-get($sizes-sm, title-large),
+        $key: line-height
+      );
+      font-weight: 600;
+    }
+
+    .search-wrapper__text {
+      margin-bottom: map-get($map: $spacing-sm, $key: margin-20);
+      font-family: $font-primary;
+      color: $text-color-fifth;
+      font-size: map-get($map: map-get($sizes-md, body), $key: font-size);
+      line-height: map-get($map: map-get($sizes-md, body), $key: line-height);
+    }
+
+    .input-wrapper {
+      position: relative;
+
+      .search-result {
+        background-color: $backgorund-color-primary;
+        display: none;
+        position: absolute;
+        z-index: 1000;
+        width: 100%;
+        top: 100%;
+        border: none;
+        padding-top: map-get($map: $spacing-sm, $key: padding-30);
+        &--visible {
+          display: flex;
+          flex-direction: column;
+          gap: map-get($map: $spacing-sm, $key: gap-30);
+        }
+
+        .search-display-btn {
+          cursor: pointer;
+          width: 100%;
+          background-color: white;
+          padding: map-get($map: $spacing-sm, $key: padding-12);
+          display: flex;
+          gap: map-get($map: $spacing-sm, $key: gap-8);
+          align-items: center;
+          border-radius: $border-radius-fifth;
+
+          .search-element__text {
+            color: $heading-color-primary;
+            font-family: $font-secondary;
+            font-weight: bold;
+            font-size: map-get(
+              $map: map-get($sizes-sm, title),
+              $key: font-size
+            );
+            line-height: map-get(
+              $map: map-get($sizes-sm, title),
+              $key: line-height
+            );
+          }
+        }
+      }
+    }
+
+    @include breakpoint(md) {
+      padding: map-get($map: $spacing-sm, $key: padding-60) 0;
+
+      .search-wrapper__title {
+        font-size: map-get(
+          $map: map-get($sizes-md, title-large),
+          $key: font-size
+        );
+        line-height: map-get(
+          $map: map-get($sizes-md, title-large),
+          $key: line-height
+        );
+      }
+    }
+
+    @include breakpoint(lg) {
+      padding-top: map-get($map: $spacing-sm, $key: padding-80);
+      padding-bottom: 38px;
+      .search-wrapper__title {
+        font-size: map-get(
+          $map: map-get($sizes-lg, title-large),
+          $key: font-size
+        );
+        line-height: map-get(
+          $map: map-get($sizes-lg, title-large),
+          $key: line-height
+        );
+      }
+
+      .search-wrapper__text {
+        font-size: map-get(
+          $map: map-get($sizes-lg, heading-large),
+          $key: font-size
+        );
+        line-height: map-get(
+          $map: map-get($sizes-lg, heading-large),
+          $key: line-height
+        );
+      }
+    }
+  }
+
+  .search-wrapper__filter {
+    padding: map-get($map: $spacing-sm, $key: padding-12) 0;
+  }
+}

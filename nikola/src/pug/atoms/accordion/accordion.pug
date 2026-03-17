@@ -1,0 +1,20 @@
+mixin AccordionItem(title, index)
+  section.accordion__item.js-accordion-item(id=`section-${index}`)
+    h2.accordion__heading
+      button.accordion__button.js-accordion__button(
+        id=`btn-${index}`
+        aria-expanded="false"
+        aria-controls=`panel-${index}`
+      )
+        | #{title}
+        span.accordion__arrow
+          include ../../../assets/icons/cheveron-down.svg
+    .accordion__panel.js-accordion-panel(
+      id=`panel-${index}`
+      role="region"
+      aria-labelledby=`btn-${index}`
+      hidden
+    )
+      .accordion__content
+        block
+

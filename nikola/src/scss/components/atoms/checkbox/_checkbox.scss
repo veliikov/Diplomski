@@ -1,0 +1,47 @@
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: map-get($map: $spacing-sm, $key: gap-price);
+}
+
+.checkbox-box {
+  width: 16px;
+  height: 16px;
+  border: $border-height-primary solid $disabled-btn-text;
+  border-radius: $border-radius-fourth;
+  cursor: pointer;
+  position: relative;
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    filter: invert(1);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &[aria-checked="true"] {
+    .icon {
+      opacity: 1;
+    }
+  }
+
+  &--disabled {
+    border-color: $cta-color-secondary;
+  }
+}
+
+.checkbox-label {
+  cursor: pointer;
+  font-family: $font-secondary;
+  font-size: map-get($map: map-get($sizes-sm, text), $key: font-size);
+  line-height: map-get($map: map-get($sizes-sm, text), $key: line-height);
+  color: $backgorund-color-fourth;
+  user-select: none;
+
+  &--disabled {
+    color: $cta-color-secondary;
+  }
+}

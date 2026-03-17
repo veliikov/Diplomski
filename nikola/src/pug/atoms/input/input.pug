@@ -1,0 +1,7 @@
+mixin Input(label,placeholder,type,name,classLabel,classInput)
+  .input-wrapper 
+    label(for=name, class=classLabel)=label 
+    input(name=name,type=type, placeholder=placeholder,id=name,class=classInput)
+    if block
+     .input__icon
+       block

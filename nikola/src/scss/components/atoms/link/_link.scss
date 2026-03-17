@@ -1,0 +1,25 @@
+@import "../../../abstracts/breakpoints";
+@import "../../../abstracts/variables";
+@import "../../../base/typography";
+.link {
+  cursor: pointer;
+  color: $text-color-fourth;
+  font-family: $font-primary;
+  text-decoration: none;
+  font-size: map-get($map: map-get($sizes-sm, body), $key: font-size);
+  line-height: map-get($map: map-get($sizes-sm, body), $key: line-height);
+
+  &:hover {
+    color: $text-color-hovered;
+  }
+
+  &:focus {
+    color: $text-color-hovered;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: map-get($map: $spacing-sm, $key: gap-20);
+}

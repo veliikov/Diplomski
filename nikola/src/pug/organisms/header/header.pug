@@ -1,0 +1,16 @@
+mixin Header()
+  header.header 
+    .container 
+      .row
+        .col-4-sm.col-6-md.col-12-lg
+          .header__nav
+            +Logo().header__logo
+            .burger-menu-section
+              +BurgerMenuBtn()
+              .burger-menu__wrapper
+                +BurgerMenu()
+            .header__nav-menu 
+              +Link("Marketplace","../../pug/pages/index.html","_self")
+              +Button("Cart","cart","","../../pug/pages/cart.html","_self").btn--cart-adding.js-cart-page-link
+                include ../../../assets/icons/cart-icon.svg
+      

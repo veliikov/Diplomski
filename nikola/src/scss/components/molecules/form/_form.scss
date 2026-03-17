@@ -1,0 +1,52 @@
+.form__wrapper {
+  width: 100%;
+  background-color: $backgorund-color-tertiary;
+  padding: map-get($map: $spacing-sm, $key: padding-form);
+  display: flex;
+  flex-direction: column;
+  gap: map-get($map: $spacing-sm, $key: gap-16);
+  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0px 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  .form-info {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($map: $spacing-sm, $key: gap-6);
+
+    .form-heading {
+      font-family: $font-tertiary;
+      font-size: map-get($map: map-get($sizes-sm, title), $key: font-size);
+      line-height: map-get($map: map-get($sizes-sm, title), $key: line-height);
+      color: $heading-color-primary;
+    }
+
+    .form-text {
+      font-family: $font-secondary;
+      font-size: map-get($map: map-get($sizes-sm, title), $key: font-size);
+      line-height: map-get($map: map-get($sizes-sm, title), $key: line-height);
+      color: $form-text-color;
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($map: $spacing-sm, $key: gap-16);
+
+    .form__btn-div {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .modal__wrapper {
+      display: none;
+
+      &--visible {
+        display: flex;
+      }
+    }
+  }
+
+  @include breakpoint(md) {
+    padding: map-get($map: $spacing-md, $key: padding-form);
+  }
+}

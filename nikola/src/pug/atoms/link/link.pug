@@ -1,0 +1,8 @@
+mixin Link(text, href,target)
+  a.link(href=href target=target)= text
+
+mixin LinkList(links)
+  ul.list
+    each link in links 
+      li.list__item
+        +Link(link,'#')

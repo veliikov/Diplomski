@@ -1,0 +1,181 @@
+.btn {
+  align-items: center;
+
+  &--card-buy {
+    cursor: pointer;
+    font-family: $font-secondary;
+    padding: map-get($map: $spacing-sm, $key: padding-11)
+      map-get($map: $spacing-sm, $key: padding-36);
+    border: $border-height-primary solid $text-color-secondary;
+    border-radius: $border-radius-default;
+    .btn__text {
+      color: $text-color-secondary;
+      font-size: map-get($map: map-get($sizes-sm, button), $key: font-size);
+      line-height: map-get($map: map-get($sizes-sm, button), $key: line-height);
+    }
+  }
+
+  &--form-buy {
+    cursor: pointer;
+    background-color: $backgorund-color-fourth;
+    font-family: $font-secondary;
+    padding: map-get($map: $spacing-sm, $key: padding-9)
+      map-get($map: $spacing-sm, $key: padding-12);
+    border: $border-height-primary solid $text-color-secondary;
+    border-radius: $border-radius-default;
+
+    .btn__text {
+      color: $text-color-fifth;
+      font-size: map-get($map: map-get($sizes-sm, title), $key: font-size);
+      line-height: map-get($map: map-get($sizes-sm, title), $key: line-height);
+    }
+  }
+
+  &--modal {
+    cursor: pointer;
+    background-color: $backgorund-color-tertiary;
+    font-family: $font-secondary;
+    padding: map-get($map: $spacing-sm, $key: padding-9)
+      map-get($map: $spacing-sm, $key: padding-12);
+    border: $border-height-primary solid $backgorund-color-fifth;
+    border-radius: $border-radius-default;
+
+    .btn__text {
+      color: $text-color-secondary;
+      font-size: map-get($map: map-get($sizes-sm, title), $key: font-size);
+      line-height: map-get($map: map-get($sizes-sm, title), $key: line-height);
+    }
+
+    &-closing {
+      cursor: pointer;
+      background-color: $cta-color-secondary;
+      font-family: $font-secondary;
+      padding: map-get($map: $spacing-sm, $key: padding-9)
+        map-get($map: $spacing-sm, $key: padding-12);
+      border: none;
+      border-radius: $border-radius-default;
+      .btn__text {
+        color: $text-color-fifth;
+        font-size: map-get($map: map-get($sizes-sm, title), $key: font-size);
+        line-height: map-get(
+          $map: map-get($sizes-sm, title),
+          $key: line-height
+        );
+      }
+    }
+  }
+
+  &--subscribe {
+    cursor: pointer;
+    background-color: $cta-color-primary;
+    font-family: $font-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: map-get($map: $spacing-sm, $key: gap-12);
+    width: 100%;
+    border-radius: $border-radius-secondary;
+    border: none;
+    padding: map-get($map: $spacing-sm, $key: padding-12) 0;
+
+    .btn__text {
+      color: $text-color-fifth;
+      font-size: map-get($map: map-get($sizes-sm, body), $key: font-size);
+      line-height: map-get($map: map-get($sizes-sm, body), $key: line-height);
+    }
+
+    @include breakpoint(md) {
+      padding: map-get($map: $spacing-sm, $key: padding-19)
+        map-get($map: $spacing-sm, $key: padding-20);
+    }
+
+    &--disabled {
+      background-color: $cta-color-secondary;
+      opacity: 0.5;
+    }
+  }
+
+  &--cart-adding {
+    width: 126px;
+    height: 60px;
+    position: relative;
+    cursor: pointer;
+    background-color: $cta-color-primary;
+    font-family: $font-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: map-get($map: $spacing-sm, $key: gap-12);
+    border-radius: $border-radius-secondary;
+    border: none;
+    padding: map-get($map: $spacing-sm, $key: padding-20)
+      map-get($map: $spacing-sm, $key: padding-30);
+
+    .btn__text {
+      color: $text-color-fifth;
+      font-size: map-get($map: map-get($sizes-sm, body), $key: font-size);
+      line-height: map-get($map: map-get($sizes-sm, body), $key: line-height);
+    }
+
+    .number-of-cards {
+      display: none;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 0px;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      background-color: $backgorund-color-fifth;
+      border-radius: 50%;
+      border: $border-height-primary solid $backgorund-color-fourth;
+      right: 0%;
+      top: -23%;
+      color: $backgorund-color-fourth;
+
+      &--active {
+        display: flex;
+      }
+    }
+  }
+
+  &--delete {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  //   &:focus {
+  //   }
+  //   &:not(:disabled):hover {
+  //     .btn__text {
+  //     }
+  //   }
+
+  &--disabled {
+    pointer-events: none;
+    opacity: 0.5;
+
+    &-card-buy {
+      border-color: $disabled-border;
+    }
+
+    &-form-buy {
+      border-color: $backgorund-color-fourth;
+    }
+
+    &--subscribe-error {
+      background-color: $subscribe-color;
+      opacity: 1;
+    }
+    .btn__icon svg path {
+      fill-rule: unset;
+      //   fill: $button-font-color-disabled;
+    }
+  }
+}
+a {
+  text-decoration: none;
+}

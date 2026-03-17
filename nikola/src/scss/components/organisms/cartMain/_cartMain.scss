@@ -1,0 +1,99 @@
+body {
+  background-color: $backgorund-color-primary;
+}
+.main.cartMain {
+  background-color: $backgorund-color-primary;
+  .cart-page__text-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: map-get($map: $spacing-sm, $key: gap-8);
+
+    .cart-page__title {
+      font-family: $font-secondary;
+      font-weight: bold;
+      font-size: map-get(
+        $map: map-get($sizes-sm, title-large),
+        $key: font-size
+      );
+      line-height: map-get(
+        $map: map-get($sizes-sm, title-large),
+        $key: line-height
+      );
+      color: $text-color-fifth;
+    }
+    .cart-page__status {
+      font-family: $font-secondary;
+      font-weight: 400;
+      font-size: map-get($map: map-get($sizes-sm, body), $key: font-size);
+      line-height: map-get($map: map-get($sizes-sm, body), $key: line-height);
+      color: $text-color-fifth;
+      margin-bottom: map-get($map: $spacing-sm, $key: margin-16);
+    }
+    .btn--cart-adding {
+      margin-top: map-get($map: $spacing-sm, $key: margin-32);
+    }
+  }
+  .accordion__wrapper {
+    margin-top: map-get($map: $spacing-sm, $key: margin-22);
+    height: 50vh;
+
+    @include breakpoint(md) {
+      margin-top: map-get($map: $spacing-md, $key: margin-17);
+    }
+  }
+
+  .buy-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($map: $spacing-sm, $key: gap-19);
+    align-items: center;
+    margin-bottom: map-get($map: $spacing-sm, $key: margin-44);
+
+    .total {
+      font-family: $font-primary;
+      font-weight: 600;
+      color: $text-color-fifth;
+      font-size: map-get(
+        $map: map-get($sizes-md, heading-medium),
+        $key: font-size
+      );
+      line-height: map-get(
+        $map: map-get($sizes-md, heading-medium),
+        $key: line-height
+      );
+    }
+
+    @include breakpoint(md) {
+      gap: map-get($map: $spacing-md, $key: gap-34);
+      margin-bottom: map-get($map: $spacing-md, $key: margin-34);
+    }
+
+    @include breakpoint(lg) {
+      gap: map-get($map: $spacing-lg, $key: gap-30);
+    }
+  }
+  .product-card-wrapper {
+    position: relative;
+    .card {
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    }
+    .modalForm {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      .modal__wrapper {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        background-color: $backgorund-color-tertiary;
+        justify-content: center;
+
+        &--visible {
+          display: flex;
+        }
+      }
+    }
+  }
+}

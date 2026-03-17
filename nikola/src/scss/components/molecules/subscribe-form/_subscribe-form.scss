@@ -1,0 +1,44 @@
+.subscribe-form {
+  .subscribe-form__input-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: map-get($map: $spacing-sm, $key: gap-16);
+
+    .modal__wrapper {
+      display: none;
+      position: fixed;
+      z-index: 99 99;
+      background-color: $backgorund-color-tertiary;
+      justify-content: center;
+
+      &--visible {
+        display: flex;
+      }
+    }
+  }
+
+  @include breakpoint(md) {
+    .subscribe-form__input-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .subscribe__input {
+      width: 100%;
+    }
+
+    .btn--subscribe {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-48.8%);
+      right: 0%;
+      height: calc(100% - 3px);
+      width: 35%;
+
+      .btn__icon {
+        display: none;
+      }
+    }
+  }
+}

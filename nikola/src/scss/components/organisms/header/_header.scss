@@ -1,0 +1,95 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: map-get($map: $spacing-sm, $key: gap-search);
+  background-color: $backgorund-color-primary;
+  overflow-x: hidden;
+
+  .header__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: map-get($map: $spacing-sm, $key: padding-15) 0
+      map-get($map: $spacing-sm, $key: padding-40);
+    .logo-link {
+      padding: 13px 0;
+    }
+
+    .burger-menu-section {
+      position: relative;
+      .burger-menu__wrapper {
+        position: absolute;
+        left: 200%;
+        z-index: 10000;
+        transition: transform 0.5 ease;
+        &.visible {
+          animation: slideIn 0.5s forwards;
+          pointer-events: auto;
+        }
+
+        &.hidden {
+          animation: slideOut 0.5s backwards;
+          pointer-events: none;
+        }
+      }
+      @keyframes slideIn {
+        0% {
+          transform: translateX(0);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(-145%);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideOut {
+        0% {
+          transform: translateX(-145%);
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .header__nav-menu {
+    display: none;
+  }
+
+  @include breakpoint(md) {
+    .burger-menu-section {
+      display: none;
+    }
+    .header__nav-menu {
+      .link {
+        color: $text-color-fifth;
+        font-size: map-get($map: map-get($sizes-md, body), $key: font-size);
+        line-height: map-get($map: map-get($sizes-md, body), $key: line-height);
+      }
+      width: 37%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  @include breakpoint(lg) {
+    .burger-menu-section {
+      display: none;
+    }
+    .header__nav-menu {
+      .link {
+        color: $text-color-fifth;
+        font-size: map-get($map: map-get($sizes-md, body), $key: font-size);
+        line-height: map-get($map: map-get($sizes-md, body), $key: line-height);
+      }
+      display: flex;
+      gap: map-get($map: $spacing-sm, $key: gap-15);
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+}

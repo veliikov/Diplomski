@@ -1,0 +1,56 @@
+.filter.accordion {
+  background-color: $backgorund-color-primary;
+  padding: map-get($spacing-sm, padding-16) map-get($spacing-sm, padding-32)
+    map-get($spacing-sm, padding-8);
+  border-bottom-left-radius: $border-radius-secondary;
+  border-bottom-right-radius: $border-radius-secondary;
+  height: 100%;
+
+  .accordion__item {
+    .accordion__heading {
+      .accordion__button {
+        font-family: $font-fourth;
+        font-size: map-get(map-get($sizes-sm, title), font-size);
+        line-height: map-get(map-get($sizes-sm, title), line-height);
+        font-weight: 500;
+      }
+    }
+
+    .accordion__panel {
+      &.open {
+        padding: map-get($spacing-sm, padding-3)
+          map-get($spacing-sm, padding-10);
+      }
+
+      span {
+        font-family: $font-fourth;
+        font-size: map-get(map-get($sizes-sm, text), font-size);
+        line-height: map-get(map-get($sizes-sm, text), line-height);
+        font-weight: 500;
+      }
+    }
+  }
+
+  .checkbox-box {
+    width: 12px;
+    height: 12px;
+
+    .icon {
+      filter: invert(0);
+    }
+
+    &[aria-checked="true"] {
+      .icon {
+        opacity: 1;
+        background-color: $backgorund-color-fourth;
+      }
+    }
+  }
+
+  .btn--card-buy {
+    margin-bottom: map-get($spacing-sm, margin-16);
+    background-color: $backgorund-color-tertiary;
+    cursor: pointer;
+    padding: map-get($spacing-sm, padding-8-12-10-12);
+  }
+}

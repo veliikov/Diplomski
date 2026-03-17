@@ -1,0 +1,14 @@
+mixin Button(text,title,type,href,target,attributes)
+  if href
+    a(href=href, title=title, target=target, class=attributes.class, ...attributes)
+      if block
+        .btn__icon
+          block
+      span.btn__text= text
+      .number-of-cards.js-number-of-cards
+  else    
+    button(class=attributes.class, title=title, type=type,...attributes)
+      if block
+        .btn__icon
+          block
+      span.btn__text= text

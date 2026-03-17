@@ -1,0 +1,23 @@
+mixin Filter()
+  .filter.accordion.group.js-accordion
+    +AccordionItem("Creator:", 0)
+      +Checkbox("Shroomie","Shroomie")
+      +Checkbox("Mr. Fox","Mr. Fox")
+      +Checkbox("BeKind2Robots","BeKind2Robots")
+      +Checkbox("RustyRobot","RustyRobot")
+      +Checkbox("Keepitreal","Keepitreal")
+    +AccordionItem("Price:", 1)
+      +Checkbox("0-3","0-3")
+      +Checkbox("3-5","3-5")
+      +Checkbox("5-7","5-7")
+      +Checkbox("7-10","7-10")
+      +Checkbox("10-15","10-15")
+    +AccordionItem("Category:", 2)
+      +Checkbox("Abstract","Abstract")
+      +Checkbox("Animals","Animals")
+      +Checkbox("Robots","Robots")
+      +Checkbox("People","People")
+    .filter__btn 
+      +Button("Apply","Apply","button").btn--card-buy.js-filter-btn
+      
+    

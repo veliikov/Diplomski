@@ -1,0 +1,384 @@
+<!DOCTYPE html >
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="NFT MARKETPLACE"/>
+    <meta name="author" content="Nikola Velikov"/>
+    <title>NFT Marketplace</title>
+    <link rel="stylesheet" href="../../../dist/css/style.css"/>
+  </head>
+  <body>
+        <header class="header"> 
+          <div class="container"> 
+            <div class="row">
+              <div class="col-4-sm col-6-md col-12-lg">
+                <div class="header__nav"><a class="logo-link" href="../../pug/pages/index.html" name="Logo" id="Logo" traget="_self" aria-label="Go to homepage"><svg xmlns="http://www.w3.org/2000/svg" width="183" height="24" fill="none"><path fill="#fff" fill-rule="evenodd" d="M4.5 9.338a.75.75 0 0 1 .75.75V19.5h13.5v-9.412a.75.75 0 0 1 1.5 0V19.5a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-9.412a.75.75 0 0 1 .75-.75M2.25 3.75A.75.75 0 0 1 3 3h18a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1-.75-.75" clip-rule="evenodd"/><path fill="#fff" fill-rule="evenodd" d="M3 5.25a.75.75 0 0 1 .75.75v1.5a2.25 2.25 0 1 0 4.5 0V6a.75.75 0 0 1 1.5 0v1.5a3.75 3.75 0 1 1-7.5 0V6A.75.75 0 0 1 3 5.25" clip-rule="evenodd"/><path fill="#fff" fill-rule="evenodd" d="M9 5.25a.75.75 0 0 1 .75.75v1.5a2.25 2.25 0 1 0 4.5 0V6a.75.75 0 0 1 1.5 0v1.5a3.75 3.75 0 1 1-7.5 0V6A.75.75 0 0 1 9 5.25" clip-rule="evenodd"/><path fill="#fff" fill-rule="evenodd" d="M15 5.25a.75.75 0 0 1 .75.75v1.5a2.25 2.25 0 0 0 4.5 0V6a.75.75 0 0 1 1.5 0v1.5a3.75 3.75 0 1 1-7.5 0V6a.75.75 0 0 1 .75-.75" clip-rule="evenodd"/><path fill="#fff" d="M38.61 16.91h.297V6.45h2.178V18h-4.257L35.475 7.539h-.297v10.46H33V6.45h4.257zM43.549 6.45h7.392v2.079h-5.215v2.64h5.116v2.079h-5.115V18h-2.178zM53.09 6.45h8.317v2.079h-3.07v9.47H56.16V8.53h-3.07zM72.769 6.45h3.828l.66 8.679v1.683h.396v-1.683l.66-8.68h3.828V18h-1.98v-7.721l.198-2.64h-.396L79.105 18h-3.267l-.891-10.362h-.396l.198 2.64V18h-1.98zM89.092 16.812q-.33.775-.924 1.105-.594.315-1.386.314-.742 0-1.402-.28a3.3 3.3 0 0 1-1.139-.826 4.1 4.1 0 0 1-.792-1.32q-.28-.775-.28-1.765v-.264q0-.974.28-1.75.28-.774.76-1.32a3.2 3.2 0 0 1 1.105-.824 3.2 3.2 0 0 1 1.37-.297q.874 0 1.402.297.544.297.858.924h.297v-.99h2.079v5.709q0 .495.445.495h.314V18h-1.42q-.56 0-.923-.33-.347-.33-.347-.858zm-1.848-.561q.908 0 1.452-.594.545-.61.545-1.65v-.198q0-1.04-.545-1.634-.544-.61-1.452-.61t-1.452.61q-.544.593-.544 1.634v.198q0 1.04.544 1.65.544.594 1.452.594M93.503 9.816h3.465v1.188h.297q.23-.677.775-1.04.561-.38 1.337-.38 1.22.001 1.963.776.743.76.743 2.327v.363l-2.145.198v-.231q0-.677-.347-1.073-.345-.412-1.04-.412-.692 0-1.088.478-.396.48-.396 1.37v2.64h1.88V18h-5.642v-1.98h1.683v-4.224h-1.485zM106.741 12.819h.396l2.178-3.003h2.277v.099l-2.64 3.745v.297l2.904 3.944V18h-2.376l-2.343-3.201h-.396v3.2h-2.079V6.45h2.079zM115.936 14.584q.017.363.165.677.165.297.429.528.28.214.627.346.363.116.759.116.775 0 1.188-.264.413-.28.594-.66l1.782.99a3.8 3.8 0 0 1-.412.66q-.264.33-.693.61a3.7 3.7 0 0 1-1.023.462q-.594.182-1.403.182a4.6 4.6 0 0 1-1.683-.297 3.8 3.8 0 0 1-1.32-.858 4 4 0 0 1-.858-1.37q-.297-.809-.297-1.831v-.1q0-.94.314-1.715.33-.775.891-1.32a4 4 0 0 1 1.303-.842 4.2 4.2 0 0 1 1.617-.313q1.056 0 1.815.38.759.362 1.254.94a3.6 3.6 0 0 1 .726 1.254q.231.675.231 1.32v1.105zm1.964-3.118q-.792 0-1.287.412-.495.396-.644.924h3.861q-.099-.578-.627-.957-.511-.38-1.303-.38M123.977 9.816h2.425V6.45h2.079v3.366h2.954v1.98h-2.954v3.729q0 .495.446.495h2.211V18h-3.465q-.561 0-.924-.363-.347-.363-.347-.924v-4.917h-2.425zM135.961 21.3h-2.079V9.816h2.079v1.188h.297a2.37 2.37 0 0 1 .957-1.04q.627-.38 1.6-.38.726 0 1.37.281.66.28 1.138.825.495.528.776 1.304.297.775.297 1.765v.297q0 1.006-.281 1.782-.28.776-.759 1.32a3.2 3.2 0 0 1-1.138.809 3.7 3.7 0 0 1-1.403.264 3.6 3.6 0 0 1-.973-.116 2.7 2.7 0 0 1-.726-.313 2.5 2.5 0 0 1-.512-.446 4 4 0 0 1-.346-.544h-.297zm2.178-5.05q.973 0 1.567-.593.61-.61.611-1.65v-.198q0-1.04-.611-1.634-.594-.61-1.567-.61-.974 0-1.584.627-.594.61-.594 1.617v.198q0 1.005.594 1.633.61.61 1.584.61M144.364 16.02h2.871V8.43h-2.772V6.45h4.851v9.57h2.673V18h-7.623zM159.813 16.812q-.33.775-.924 1.105-.594.315-1.386.314-.742 0-1.402-.28a3.3 3.3 0 0 1-1.139-.826 4.1 4.1 0 0 1-.792-1.32q-.28-.775-.28-1.765v-.264q0-.974.28-1.75.28-.774.759-1.32a3.2 3.2 0 0 1 1.106-.824 3.2 3.2 0 0 1 1.369-.297q.875 0 1.403.297.544.297.858.924h.297v-.99h2.079v5.709q0 .495.445.495h.314V18h-1.419q-.561 0-.924-.33-.347-.33-.347-.858zm-1.848-.561q.907 0 1.452-.594.545-.61.545-1.65v-.198q0-1.04-.545-1.634-.544-.61-1.452-.61t-1.452.61q-.544.593-.544 1.634v.198q0 1.04.544 1.65.544.594 1.452.594M172.606 14.997q-.28 1.452-1.337 2.343-1.04.89-2.788.89a5 5 0 0 1-1.7-.28 4 4 0 0 1-1.353-.808 3.7 3.7 0 0 1-.907-1.304q-.33-.775-.33-1.765v-.198q0-.99.33-1.782a4 4 0 0 1 .907-1.353q.594-.561 1.37-.858a4.8 4.8 0 0 1 1.683-.297q1.716 0 2.772.89 1.072.892 1.353 2.344l-2.046.528a2.14 2.14 0 0 0-.627-1.254q-.528-.528-1.485-.528-.446 0-.842.165a2 2 0 0 0-.693.478 2.2 2.2 0 0 0-.478.743q-.165.429-.165.973v.1q0 .543.165.973.181.412.478.693t.693.429q.396.132.842.132.957 0 1.452-.479.512-.478.66-1.287zM176.554 14.584q.016.363.165.677.165.297.429.528.28.214.627.346.363.116.759.116.776 0 1.188-.264.412-.28.594-.66l1.782.99a3.8 3.8 0 0 1-.412.66q-.264.33-.693.61a3.7 3.7 0 0 1-1.023.462q-.594.182-1.403.182a4.6 4.6 0 0 1-1.683-.297 3.8 3.8 0 0 1-1.32-.858 4 4 0 0 1-.858-1.37q-.297-.809-.297-1.831v-.1q0-.94.314-1.715.33-.775.891-1.32a4 4 0 0 1 1.303-.842 4.2 4.2 0 0 1 1.617-.313q1.056 0 1.815.38.759.362 1.254.94a3.6 3.6 0 0 1 .726 1.254q.231.675.231 1.32v1.105zm1.964-3.118q-.792 0-1.287.412-.495.396-.644.924h3.861q-.099-.578-.627-.957-.511-.38-1.303-.38"/></svg></a>
+                  <div class="burger-menu-section">
+                        <button class="burger__btn js-burger-btn" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#fff" fill-rule="evenodd" d="M3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12M3 6a.75.75 0 0 1 .75-.75H15a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6M3 18a.75.75 0 0 1 .75-.75H15a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 18" clip-rule="evenodd"/></svg></button>
+                    <div class="burger-menu__wrapper">
+                          <div class="burger-menu">
+                            <ul class="burger-menu__list"> 
+                              <li class="burger-menu__item"> <a class="burger-menu__link" href="../../pug/pages/index.html">Marketplace</a></li>
+                              <li class="burger-menu__item"> <a class="burger-menu__link js-cart-link" href="../../pug/pages/cart.html">Cart</a></li>
+                            </ul>
+                            <div class="burger-triangle"></div>
+                          </div>
+                    </div>
+                  </div>
+                  <div class="header__nav-menu"> <a class="link" href="../../pug/pages/index.html" target="_self">Marketplace</a><a class="btn--cart-adding js-cart-page-link" href="../../pug/pages/cart.html" title="cart" target="_self" ...attributes="...attributes">
+                          <div class="btn__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.5 2.5h1.667L4.5 4.167m1.333 6.666h8.334L17.5 4.167h-13m1.333 6.666L4.5 4.167m1.333 6.666-1.91 1.911c-.525.525-.154 1.423.589 1.423h9.655m0 0a1.667 1.667 0 1 0 0 3.333 1.667 1.667 0 0 0 0-3.333M7.5 15.833a1.667 1.667 0 1 1-3.333 0 1.667 1.667 0 0 1 3.333 0"/></svg>
+                          </div><span class="btn__text">Cart</span>
+                          <div class="number-of-cards js-number-of-cards"></div></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <main class="main">
+          <div class="row"> 
+            <div class="col-4-sm col-6-md col-12-lg"> 
+                  <div class="search-wrapper js-search-wrapper container">
+                    <div class="row">
+                      <div class="col-4-sm col-6-md col-12-lg">   
+                        <div class="search-wrapper__search"> 
+                          <h1 class="search-wrapper__title">Browse Marketplace</h1>
+                          <p class="search-wrapper__text">Browse through more than 50k NFTs on the NFT Marketplace.</p>
+                              <div class="input-wrapper"> 
+                                <label for="search"></label>
+                                <input class="input-wrapper header__search-input js-search-input" name="search" type="text" placeholder="Search your favourite NFTs" id="search"/>
+                                <div class="input__icon">
+                                  <button class="search-btn" id="search" aria-label="search">
+                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#fff" fill-rule="evenodd" d="M10.875 3.75a7.125 7.125 0 1 0 0 14.25 7.125 7.125 0 0 0 0-14.25M2.25 10.875a8.625 8.625 0 1 1 17.25 0 8.625 8.625 0 0 1-17.25 0" clip-rule="evenodd"/><path fill="#fff" fill-rule="evenodd" d="M15.914 15.913a.75.75 0 0 1 1.06 0l4.556 4.557a.75.75 0 0 1-1.06 1.06l-4.556-4.556a.75.75 0 0 1 0-1.06" clip-rule="evenodd"/></svg></button>
+                                </div>
+                              </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-4-sm col-6-md col-12-lg">   
+                        <div class="search-wrapper__filter"> 
+                              <button class="filter__btn js-filter-shortcut" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="17" fill="none"><path fill="#fff" d="M0 15.786a1.214 1.214 0 0 1 1.214-1.215H8.5A1.214 1.214 0 0 1 8.5 17H1.214A1.214 1.214 0 0 1 0 15.786M0 8.5a1.214 1.214 0 0 1 1.214-1.214h17a1.214 1.214 0 0 1 0 2.428h-17A1.214 1.214 0 0 1 0 8.5m0-7.286A1.214 1.214 0 0 1 1.214 0H27.93a1.214 1.214 0 0 1 0 2.429H1.214A1.214 1.214 0 0 1 0 1.214"/></svg><span class="filter__text">Filter</span></button>
+                              <div class="filter__wrapper">
+                                    <div class="filter accordion group js-accordion">
+                                          <section class="accordion__item js-accordion-item" id="section-0">
+                                            <h2 class="accordion__heading">
+                                              <button class="accordion__button js-accordion__button" id="btn-0" aria-expanded="false" aria-controls="panel-0">Creator:<span class="accordion__arrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path fill="#9CA3AF" fill-rule="evenodd" d="M5.293 7.293a1 1 0 0 1 1.414 0L10 10.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414" clip-rule="evenodd"/></svg></span></button>
+                                            </h2>
+                                            <div class="accordion__panel js-accordion-panel" id="panel-0" role="region" aria-labelledby="btn-0" hidden="hidden">
+                                              <div class="accordion__content">
+                                                    <div class="checkbox-wrapper">
+                                                      <div class="checkbox-box js-checkbox" role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="label-Shroomie" value="Shroomie"><img class="icon" src="../../assets/icons/check.svg" alt="" aria-hidden="true"/></div><span class="checkbox-label js-checkbox-label" id="label-Shroomie" data-target="Shroomie">Shroomie</span>
+                                                    </div>
+                                                    <div class="checkbox-wrapper">
+                                                      <div class="checkbox-box js-checkbox" role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="label-Mr. Fox" value="Mr. Fox"><img class="icon" src="../../assets/icons/check.svg" alt="" aria-hidden="true"/></div><span class="checkbox-label js-checkbox-label" id="label-Mr. Fox" data-target="Mr. Fox">Mr. Fox</span>
+                                                    </div>
+                                                    <div class="checkbox-wrapper">
+                                                      <div class="checkbox-box js-checkbox" role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="label-BeKind2Robots" value="BeKind2Robots"><img class="icon" src="../../assets/icons/check.svg" alt="" aria-hidden="true"/></div><span class="checkbox-label js-checkbox-label" id="label-BeKind2Robots" data-target="BeKind2Robots">BeKind2Robots</span>
+                                                    </div>
+                                                    <div class="checkbox-wrapper">
+                                                      <div class="checkbox-box js-checkbox" role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="label-RustyRobot" value="RustyRobot"><img class="icon" src="../../assets/icons/check.svg" alt="" aria-hidden="true"/></div><span class="checkbox-label js-checkbox-label" id="label-RustyRobot" data-target="RustyRobot">RustyRobot</span>
+                                                    </div>
+                                                    <div class="checkbox-wrapper">
+                                                      <div class="checkbox-box js-checkbox" role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="label-Keepitreal" value="Keepitreal"><img class="icon" src="../../assets/icons/check.svg" alt="" aria-hidden="true"/></div><span class="checkbox-label js-checkbox-label" id="label-Keepitreal" data-target="Keepitreal">Keepitreal</span>
+                                                    </div>
+                                              </div>
+                                            </div>
+                                          </section>
+                                          <section class="accordion__item js-accordion-item" id="section-1">
+                                            <h2 class="accordion__heading">
+                                              <button class="accordion__button js-accordion__button" id="btn-1" aria-expanded="false" aria-controls="panel-1">Price:<span class="accordion__arrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path fill="#9CA3AF" fill-rule="evenodd" d="M5.293 7.293a1 1 0 0 1 1.414 0L10 10.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414" clip-rule="evenodd"/></svg></span></button>
+                                            </h2>
+                                            <div class="accordion__panel js-accordion-panel" id="panel-1" role="region" aria-labelledby="btn-1" hidden="hidden">
+                                              <div class="accordion__content">
+                                                    <div class="checkbox-wrapper">
+                                                      <div class="checkbox-box js-checkbox" role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="label-0-3" value="0-3"><img class="icon" src="../../assets/icons/check.svg" alt="" aria-hidden="true"/></div><span class="checkbox-label js-checkbox-label" id="label-0-3" data-target="0-3">0-3</span>
+                                                    </div>
+                                                    <div class="checkbox-wrapper">
+                                                      <div class="checkbox-box js-checkbox" role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="label-3-5" value="3-5"><img class="icon" src="../../assets/icons/check.svg" alt="" aria-hidden="true"/></div><span class="checkbox-label js-checkbox-label" id="label-3-5" data-target="3-5">3-5</span>
+                                                    </div>
+                                                    <div class="checkbox-wrapper">
+                                                      <div class="checkbox-box js-checkbox" role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="label-5-7" value="5-7"><img class="icon" src="../../assets/icons/check.svg" alt="" aria-hidden="true"/></div><span class="checkbox-label js-checkbox-label" id="label-5-7" data-target="5-7">5-7</span>
+                                                    </div>
+                                                    <div class="checkbox-wrapper">
+                                                      <div class="checkbox-box js-checkbox" role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="label-7-10" value="7-10"><img class="icon" src="../../assets/icons/check.svg" alt="" aria-hidden="true"/></div><span class="checkbox-label js-checkbox-label" id="label-7-10" data-target="7-10">7-10</span>
+                                                    </div>
+                                                    <div class="checkbox-wrapper">
+                                                      <div class="checkbox-box js-checkbox" role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="label-10-15" value="10-15"><img class="icon" src="../../assets/icons/check.svg" alt="" aria-hidden="true"/></div><span class="checkbox-label js-checkbox-label" id="label-10-15" data-target="10-15">10-15</span>
+                                                    </div>
+                                              </div>
+                                            </div>
+                                          </section>
+                                          <section class="accordion__item js-accordion-item" id="section-2">
+                                            <h2 class="accordion__heading">
+                                              <button class="accordion__button js-accordion__button" id="btn-2" aria-expanded="false" aria-controls="panel-2">Category:<span class="accordion__arrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path fill="#9CA3AF" fill-rule="evenodd" d="M5.293 7.293a1 1 0 0 1 1.414 0L10 10.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414" clip-rule="evenodd"/></svg></span></button>
+                                            </h2>
+                                            <div class="accordion__panel js-accordion-panel" id="panel-2" role="region" aria-labelledby="btn-2" hidden="hidden">
+                                              <div class="accordion__content">
+                                                    <div class="checkbox-wrapper">
+                                                      <div class="checkbox-box js-checkbox" role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="label-Abstract" value="Abstract"><img class="icon" src="../../assets/icons/check.svg" alt="" aria-hidden="true"/></div><span class="checkbox-label js-checkbox-label" id="label-Abstract" data-target="Abstract">Abstract</span>
+                                                    </div>
+                                                    <div class="checkbox-wrapper">
+                                                      <div class="checkbox-box js-checkbox" role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="label-Animals" value="Animals"><img class="icon" src="../../assets/icons/check.svg" alt="" aria-hidden="true"/></div><span class="checkbox-label js-checkbox-label" id="label-Animals" data-target="Animals">Animals</span>
+                                                    </div>
+                                                    <div class="checkbox-wrapper">
+                                                      <div class="checkbox-box js-checkbox" role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="label-Robots" value="Robots"><img class="icon" src="../../assets/icons/check.svg" alt="" aria-hidden="true"/></div><span class="checkbox-label js-checkbox-label" id="label-Robots" data-target="Robots">Robots</span>
+                                                    </div>
+                                                    <div class="checkbox-wrapper">
+                                                      <div class="checkbox-box js-checkbox" role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="label-People" value="People"><img class="icon" src="../../assets/icons/check.svg" alt="" aria-hidden="true"/></div><span class="checkbox-label js-checkbox-label" id="label-People" data-target="People">People</span>
+                                                    </div>
+                                              </div>
+                                            </div>
+                                          </section>
+                                      <div class="filter__btn"> 
+                                            <button class="btn--card-buy js-filter-btn" title="Apply" type="button" ...attributes="...attributes"><span class="btn__text">Apply</span>
+                                            </button>
+                                      </div>
+                                    </div>
+                              </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="row plp-cards-part">
+            <div class="container">
+              <div class="col-4-sm col-6-md col-12-lg js-product-card-wrapper product-card-wrapper">
+                    <div class="card js-product-card">
+                      <div class="card__image"> <img class="card__picture" src="" alt="card" loading="eager"/>
+                      </div>
+                      <div class="card__info">
+                        <div class="card__product-and-creator">
+                          <div class="card__heading-wrapper"> 
+                            <h2 class="card__header">Magic Mushroom 0324 </h2>
+                          </div>
+                          <div class="card__creator"><img class="card__logo" src="" alt="user"/><span class="card__username">Shroomie</span></div>
+                        </div>
+                        <div class="card__price-total"> 
+                          <div class="card__price"> 
+                            <p class="card__price-text">Price</p>
+                            <p class="card__price-value">1.63 ETH</p>
+                          </div>
+                          <div class="card__highest-bid"> 
+                            <p class="card__highest-bid-text">Highest Bid</p>
+                            <p class="card__highest-bid-value">0.33 ETH</p>
+                          </div>
+                        </div>
+                        <div class="card__button"> 
+                              <button class="btn--card-buy js-card-buy-now" title="buy" type="button" ...attributes="...attributes"><span class="btn__text">Buy Now</span>
+                              </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card js-product-card">
+                      <div class="card__image"> <img class="card__picture" src="" alt="card" loading="eager"/>
+                      </div>
+                      <div class="card__info">
+                        <div class="card__product-and-creator">
+                          <div class="card__heading-wrapper"> 
+                            <h2 class="card__header">Magic Mushroom 0324 </h2>
+                          </div>
+                          <div class="card__creator"><img class="card__logo" src="" alt="user"/><span class="card__username">Shroomie</span></div>
+                        </div>
+                        <div class="card__price-total"> 
+                          <div class="card__price"> 
+                            <p class="card__price-text">Price</p>
+                            <p class="card__price-value">1.63 ETH</p>
+                          </div>
+                          <div class="card__highest-bid"> 
+                            <p class="card__highest-bid-text">Highest Bid</p>
+                            <p class="card__highest-bid-value">0.33 ETH</p>
+                          </div>
+                        </div>
+                        <div class="card__button"> 
+                              <button class="btn--card-buy js-card-buy-now" title="buy" type="button" ...attributes="...attributes"><span class="btn__text">Buy Now</span>
+                              </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card js-product-card">
+                      <div class="card__image"> <img class="card__picture" src="" alt="card" loading="lazy"/>
+                      </div>
+                      <div class="card__info">
+                        <div class="card__product-and-creator">
+                          <div class="card__heading-wrapper"> 
+                            <h2 class="card__header">Magic Mushroom 0324 </h2>
+                          </div>
+                          <div class="card__creator"><img class="card__logo" src="" alt="user"/><span class="card__username">Shroomie</span></div>
+                        </div>
+                        <div class="card__price-total"> 
+                          <div class="card__price"> 
+                            <p class="card__price-text">Price</p>
+                            <p class="card__price-value">1.63 ETH</p>
+                          </div>
+                          <div class="card__highest-bid"> 
+                            <p class="card__highest-bid-text">Highest Bid</p>
+                            <p class="card__highest-bid-value">0.33 ETH</p>
+                          </div>
+                        </div>
+                        <div class="card__button"> 
+                              <button class="btn--card-buy js-card-buy-now" title="buy" type="button" ...attributes="...attributes"><span class="btn__text">Buy Now</span>
+                              </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card js-product-card">
+                      <div class="card__image"> <img class="card__picture" src="" alt="card" loading="lazy"/>
+                      </div>
+                      <div class="card__info">
+                        <div class="card__product-and-creator">
+                          <div class="card__heading-wrapper"> 
+                            <h2 class="card__header">Magic Mushroom 0324 </h2>
+                          </div>
+                          <div class="card__creator"><img class="card__logo" src="" alt="user"/><span class="card__username">Shroomie</span></div>
+                        </div>
+                        <div class="card__price-total"> 
+                          <div class="card__price"> 
+                            <p class="card__price-text">Price</p>
+                            <p class="card__price-value">1.63 ETH</p>
+                          </div>
+                          <div class="card__highest-bid"> 
+                            <p class="card__highest-bid-text">Highest Bid</p>
+                            <p class="card__highest-bid-value">0.33 ETH</p>
+                          </div>
+                        </div>
+                        <div class="card__button"> 
+                              <button class="btn--card-buy js-card-buy-now" title="buy" type="button" ...attributes="...attributes"><span class="btn__text">Buy Now</span>
+                              </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card js-product-card">
+                      <div class="card__image"> <img class="card__picture" src="" alt="card" loading="lazy"/>
+                      </div>
+                      <div class="card__info">
+                        <div class="card__product-and-creator">
+                          <div class="card__heading-wrapper"> 
+                            <h2 class="card__header">Magic Mushroom 0324 </h2>
+                          </div>
+                          <div class="card__creator"><img class="card__logo" src="" alt="user"/><span class="card__username">Shroomie</span></div>
+                        </div>
+                        <div class="card__price-total"> 
+                          <div class="card__price"> 
+                            <p class="card__price-text">Price</p>
+                            <p class="card__price-value">1.63 ETH</p>
+                          </div>
+                          <div class="card__highest-bid"> 
+                            <p class="card__highest-bid-text">Highest Bid</p>
+                            <p class="card__highest-bid-value">0.33 ETH</p>
+                          </div>
+                        </div>
+                        <div class="card__button"> 
+                              <button class="btn--card-buy js-card-buy-now" title="buy" type="button" ...attributes="...attributes"><span class="btn__text">Buy Now</span>
+                              </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card js-product-card">
+                      <div class="card__image"> <img class="card__picture" src="" alt="card" loading="lazy"/>
+                      </div>
+                      <div class="card__info">
+                        <div class="card__product-and-creator">
+                          <div class="card__heading-wrapper"> 
+                            <h2 class="card__header">Magic Mushroom 0324 </h2>
+                          </div>
+                          <div class="card__creator"><img class="card__logo" src="" alt="user"/><span class="card__username">Shroomie</span></div>
+                        </div>
+                        <div class="card__price-total"> 
+                          <div class="card__price"> 
+                            <p class="card__price-text">Price</p>
+                            <p class="card__price-value">1.63 ETH</p>
+                          </div>
+                          <div class="card__highest-bid"> 
+                            <p class="card__highest-bid-text">Highest Bid</p>
+                            <p class="card__highest-bid-value">0.33 ETH</p>
+                          </div>
+                        </div>
+                        <div class="card__button"> 
+                              <button class="btn--card-buy js-card-buy-now" title="buy" type="button" ...attributes="...attributes"><span class="btn__text">Buy Now</span>
+                              </button>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <footer class="footer"> 
+          <div class="container"> 
+            <div class="row">
+              <div class="col-4-sm col-6-md col-4-lg">
+                <div class="footer__upper-part"><a class="logo-link" href="../../pug/pages/index.html" name="Logo" id="Logo" traget="_self" aria-label="Go to homepage"><svg xmlns="http://www.w3.org/2000/svg" width="183" height="24" fill="none"><path fill="#fff" fill-rule="evenodd" d="M4.5 9.338a.75.75 0 0 1 .75.75V19.5h13.5v-9.412a.75.75 0 0 1 1.5 0V19.5a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-9.412a.75.75 0 0 1 .75-.75M2.25 3.75A.75.75 0 0 1 3 3h18a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1-.75-.75" clip-rule="evenodd"/><path fill="#fff" fill-rule="evenodd" d="M3 5.25a.75.75 0 0 1 .75.75v1.5a2.25 2.25 0 1 0 4.5 0V6a.75.75 0 0 1 1.5 0v1.5a3.75 3.75 0 1 1-7.5 0V6A.75.75 0 0 1 3 5.25" clip-rule="evenodd"/><path fill="#fff" fill-rule="evenodd" d="M9 5.25a.75.75 0 0 1 .75.75v1.5a2.25 2.25 0 1 0 4.5 0V6a.75.75 0 0 1 1.5 0v1.5a3.75 3.75 0 1 1-7.5 0V6A.75.75 0 0 1 9 5.25" clip-rule="evenodd"/><path fill="#fff" fill-rule="evenodd" d="M15 5.25a.75.75 0 0 1 .75.75v1.5a2.25 2.25 0 0 0 4.5 0V6a.75.75 0 0 1 1.5 0v1.5a3.75 3.75 0 1 1-7.5 0V6a.75.75 0 0 1 .75-.75" clip-rule="evenodd"/><path fill="#fff" d="M38.61 16.91h.297V6.45h2.178V18h-4.257L35.475 7.539h-.297v10.46H33V6.45h4.257zM43.549 6.45h7.392v2.079h-5.215v2.64h5.116v2.079h-5.115V18h-2.178zM53.09 6.45h8.317v2.079h-3.07v9.47H56.16V8.53h-3.07zM72.769 6.45h3.828l.66 8.679v1.683h.396v-1.683l.66-8.68h3.828V18h-1.98v-7.721l.198-2.64h-.396L79.105 18h-3.267l-.891-10.362h-.396l.198 2.64V18h-1.98zM89.092 16.812q-.33.775-.924 1.105-.594.315-1.386.314-.742 0-1.402-.28a3.3 3.3 0 0 1-1.139-.826 4.1 4.1 0 0 1-.792-1.32q-.28-.775-.28-1.765v-.264q0-.974.28-1.75.28-.774.76-1.32a3.2 3.2 0 0 1 1.105-.824 3.2 3.2 0 0 1 1.37-.297q.874 0 1.402.297.544.297.858.924h.297v-.99h2.079v5.709q0 .495.445.495h.314V18h-1.42q-.56 0-.923-.33-.347-.33-.347-.858zm-1.848-.561q.908 0 1.452-.594.545-.61.545-1.65v-.198q0-1.04-.545-1.634-.544-.61-1.452-.61t-1.452.61q-.544.593-.544 1.634v.198q0 1.04.544 1.65.544.594 1.452.594M93.503 9.816h3.465v1.188h.297q.23-.677.775-1.04.561-.38 1.337-.38 1.22.001 1.963.776.743.76.743 2.327v.363l-2.145.198v-.231q0-.677-.347-1.073-.345-.412-1.04-.412-.692 0-1.088.478-.396.48-.396 1.37v2.64h1.88V18h-5.642v-1.98h1.683v-4.224h-1.485zM106.741 12.819h.396l2.178-3.003h2.277v.099l-2.64 3.745v.297l2.904 3.944V18h-2.376l-2.343-3.201h-.396v3.2h-2.079V6.45h2.079zM115.936 14.584q.017.363.165.677.165.297.429.528.28.214.627.346.363.116.759.116.775 0 1.188-.264.413-.28.594-.66l1.782.99a3.8 3.8 0 0 1-.412.66q-.264.33-.693.61a3.7 3.7 0 0 1-1.023.462q-.594.182-1.403.182a4.6 4.6 0 0 1-1.683-.297 3.8 3.8 0 0 1-1.32-.858 4 4 0 0 1-.858-1.37q-.297-.809-.297-1.831v-.1q0-.94.314-1.715.33-.775.891-1.32a4 4 0 0 1 1.303-.842 4.2 4.2 0 0 1 1.617-.313q1.056 0 1.815.38.759.362 1.254.94a3.6 3.6 0 0 1 .726 1.254q.231.675.231 1.32v1.105zm1.964-3.118q-.792 0-1.287.412-.495.396-.644.924h3.861q-.099-.578-.627-.957-.511-.38-1.303-.38M123.977 9.816h2.425V6.45h2.079v3.366h2.954v1.98h-2.954v3.729q0 .495.446.495h2.211V18h-3.465q-.561 0-.924-.363-.347-.363-.347-.924v-4.917h-2.425zM135.961 21.3h-2.079V9.816h2.079v1.188h.297a2.37 2.37 0 0 1 .957-1.04q.627-.38 1.6-.38.726 0 1.37.281.66.28 1.138.825.495.528.776 1.304.297.775.297 1.765v.297q0 1.006-.281 1.782-.28.776-.759 1.32a3.2 3.2 0 0 1-1.138.809 3.7 3.7 0 0 1-1.403.264 3.6 3.6 0 0 1-.973-.116 2.7 2.7 0 0 1-.726-.313 2.5 2.5 0 0 1-.512-.446 4 4 0 0 1-.346-.544h-.297zm2.178-5.05q.973 0 1.567-.593.61-.61.611-1.65v-.198q0-1.04-.611-1.634-.594-.61-1.567-.61-.974 0-1.584.627-.594.61-.594 1.617v.198q0 1.005.594 1.633.61.61 1.584.61M144.364 16.02h2.871V8.43h-2.772V6.45h4.851v9.57h2.673V18h-7.623zM159.813 16.812q-.33.775-.924 1.105-.594.315-1.386.314-.742 0-1.402-.28a3.3 3.3 0 0 1-1.139-.826 4.1 4.1 0 0 1-.792-1.32q-.28-.775-.28-1.765v-.264q0-.974.28-1.75.28-.774.759-1.32a3.2 3.2 0 0 1 1.106-.824 3.2 3.2 0 0 1 1.369-.297q.875 0 1.403.297.544.297.858.924h.297v-.99h2.079v5.709q0 .495.445.495h.314V18h-1.419q-.561 0-.924-.33-.347-.33-.347-.858zm-1.848-.561q.907 0 1.452-.594.545-.61.545-1.65v-.198q0-1.04-.545-1.634-.544-.61-1.452-.61t-1.452.61q-.544.593-.544 1.634v.198q0 1.04.544 1.65.544.594 1.452.594M172.606 14.997q-.28 1.452-1.337 2.343-1.04.89-2.788.89a5 5 0 0 1-1.7-.28 4 4 0 0 1-1.353-.808 3.7 3.7 0 0 1-.907-1.304q-.33-.775-.33-1.765v-.198q0-.99.33-1.782a4 4 0 0 1 .907-1.353q.594-.561 1.37-.858a4.8 4.8 0 0 1 1.683-.297q1.716 0 2.772.89 1.072.892 1.353 2.344l-2.046.528a2.14 2.14 0 0 0-.627-1.254q-.528-.528-1.485-.528-.446 0-.842.165a2 2 0 0 0-.693.478 2.2 2.2 0 0 0-.478.743q-.165.429-.165.973v.1q0 .543.165.973.181.412.478.693t.693.429q.396.132.842.132.957 0 1.452-.479.512-.478.66-1.287zM176.554 14.584q.016.363.165.677.165.297.429.528.28.214.627.346.363.116.759.116.776 0 1.188-.264.412-.28.594-.66l1.782.99a3.8 3.8 0 0 1-.412.66q-.264.33-.693.61a3.7 3.7 0 0 1-1.023.462q-.594.182-1.403.182a4.6 4.6 0 0 1-1.683-.297 3.8 3.8 0 0 1-1.32-.858 4 4 0 0 1-.858-1.37q-.297-.809-.297-1.831v-.1q0-.94.314-1.715.33-.775.891-1.32a4 4 0 0 1 1.303-.842 4.2 4.2 0 0 1 1.617-.313q1.056 0 1.815.38.759.362 1.254.94a3.6 3.6 0 0 1 .726 1.254q.231.675.231 1.32v1.105zm1.964-3.118q-.792 0-1.287.412-.495.396-.644.924h3.861q-.099-.578-.627-.957-.511-.38-1.303-.38"/></svg></a>
+                  <p class="footer__info">NFT marketplace UI created with Anima for Figma.</p><a class="link" href="../../pug/pages/index.html" target="_self">Join our community</a>
+                  <ul class="footer__md-list"> 
+                    <li class="footer__md-list-item"> <a href="https://discord.com/" id="Discord" name="Discord" target="_blank" rel="noopener noreferrer" aria-label="Visit our Discord server"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none"><path fill="#858584" d="M12 19.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M20 19.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/><path fill="#858584" fill-rule="evenodd" d="M15.993 10a20.9 20.9 0 0 0-6.394.954 1 1 0 0 1-.598-1.909 22.9 22.9 0 0 1 7-1.045 22.9 22.9 0 0 1 6.998 1.045 1 1 0 1 1-.598 1.909A20.9 20.9 0 0 0 16.008 10zM8.346 21.701a1 1 0 0 1 1.253-.655c2.069.648 4.226.97 6.394.954h.014a20.9 20.9 0 0 0 6.394-.954 1 1 0 1 1 .598 1.908A22.9 22.9 0 0 1 16 24a22.9 22.9 0 0 1-6.999-1.046 1 1 0 0 1-.655-1.253" clip-rule="evenodd"/><path fill="#858584" fill-rule="evenodd" d="M20.22 4.811c.43-.242.935-.318 1.418-.213 1.317.286 2.607.686 3.855 1.197a1.96 1.96 0 0 1 1.179 1.286l4.236 14.144a2.01 2.01 0 0 1-.596 2.088l-.006.004c-2.067 1.8-4.868 3.16-8.05 3.94a1.976 1.976 0 0 1-2.266-1.053l-1.508-2.991a1 1 0 0 1 1.786-.9l1.512 3 .002.002c2.937-.72 5.432-1.958 7.212-3.507l.656.755-.662-.75.004-.006V21.8L24.756 7.655l-.01-.005a21 21 0 0 0-3.533-1.097h-.002a.01.01 0 0 0-.014.006l-.985 2.98a1 1 0 0 1-1.899-.628l.99-2.996c.16-.468.486-.86.917-1.104M10.798 6.553a.01.01 0 0 0-.01 0h-.001a21 21 0 0 0-3.543 1.102L3.008 21.8v.007q0 .003.003.005c1.78 1.547 4.272 2.783 7.208 3.503v-.003l1.513-3a1 1 0 0 1 1.786.9l-1.508 2.992a1.975 1.975 0 0 1-2.266 1.054c-3.182-.78-5.983-2.142-8.05-3.94l-.006-.005a2.01 2.01 0 0 1-.596-2.087L5.328 7.08a1.96 1.96 0 0 1 1.18-1.286 23 23 0 0 1 3.855-1.197 2.013 2.013 0 0 1 2.334 1.317l.003.009.987 2.987a1 1 0 1 1-1.899.628l-.985-2.98z" clip-rule="evenodd"/><path fill="#858584" d="M12 19.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M20 19.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/><path fill="#858584" fill-rule="evenodd" d="M15.993 10a20.9 20.9 0 0 0-6.394.954 1 1 0 0 1-.598-1.909 22.9 22.9 0 0 1 7-1.045 22.9 22.9 0 0 1 6.998 1.045 1 1 0 1 1-.598 1.909A20.9 20.9 0 0 0 16.008 10zM8.346 21.701a1 1 0 0 1 1.253-.655c2.069.648 4.226.97 6.394.954h.014a20.9 20.9 0 0 0 6.394-.954 1 1 0 1 1 .598 1.908A22.9 22.9 0 0 1 16 24a22.9 22.9 0 0 1-6.999-1.046 1 1 0 0 1-.655-1.253" clip-rule="evenodd"/><path fill="#858584" fill-rule="evenodd" d="M20.22 4.811c.43-.242.935-.318 1.418-.213 1.317.286 2.607.686 3.855 1.197a1.96 1.96 0 0 1 1.179 1.286l4.236 14.144a2.01 2.01 0 0 1-.596 2.088l-.006.004c-2.067 1.8-4.868 3.16-8.05 3.94a1.976 1.976 0 0 1-2.266-1.053l-1.508-2.991a1 1 0 0 1 1.786-.9l1.512 3 .002.002c2.937-.72 5.432-1.958 7.212-3.507l.656.755-.662-.75.004-.006V21.8L24.756 7.655l-.01-.005a21 21 0 0 0-3.533-1.097h-.002a.01.01 0 0 0-.014.006l-.985 2.98a1 1 0 0 1-1.899-.628l.99-2.996c.16-.468.486-.86.917-1.104M10.798 6.553a.01.01 0 0 0-.01 0h-.001a21 21 0 0 0-3.543 1.102L3.008 21.8v.007q0 .003.003.005c1.78 1.547 4.272 2.783 7.208 3.503v-.003l1.513-3a1 1 0 0 1 1.786.9l-1.508 2.992a1.975 1.975 0 0 1-2.266 1.054c-3.182-.78-5.983-2.142-8.05-3.94l-.006-.005a2.01 2.01 0 0 1-.596-2.087L5.328 7.08a1.96 1.96 0 0 1 1.18-1.286 23 23 0 0 1 3.855-1.197 2.013 2.013 0 0 1 2.334 1.317l.003.009.987 2.987a1 1 0 1 1-1.899.628l-.985-2.98z" clip-rule="evenodd"/></svg></a></li>
+                    <li class="footer__md-list-item"> <a href="https://www.youtube.com/" id="Youtube" name="Youtube" target="_blank" rel="noopener noreferrer" aria-label="Visit our Youtube channel"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none"><path fill="#858584" fill-rule="evenodd" d="M13.528 11.118a1 1 0 0 1 1.027.05l6 4a1 1 0 0 1 0 1.664l-6 4A1 1 0 0 1 13 20v-8a1 1 0 0 1 .528-.882M15 13.868v4.263L18.197 16z" clip-rule="evenodd"/><path fill="#858584" fill-rule="evenodd" d="M15.999 5.05h-.08l-.236.001a54.216 54.216 0 0 0-3.76.183c-2.276.193-5.174.592-7.405 1.444l-.015.006a3.01 3.01 0 0 0-1.796 2.04v.003C2.394 9.946 2 12.206 2 16s.395 6.054.706 7.273l.001.003a3.01 3.01 0 0 0 1.796 2.04l.015.006c2.231.852 5.13 1.25 7.406 1.443a54 54 0 0 0 3.995.185h.162q.083 0 .236-.002a54.288 54.288 0 0 0 3.76-.183c2.276-.192 5.174-.591 7.405-1.444l.015-.005a3.01 3.01 0 0 0 1.796-2.04v-.003c.312-1.22.707-3.479.707-7.273s-.395-6.054-.706-7.273l-.001-.004a3.01 3.01 0 0 0-1.796-2.039l-.015-.006c-2.231-.852-5.13-1.251-7.406-1.443a54 54 0 0 0-3.995-.185h-.083m-.004 19.9h.082q.074 0 .219-.002a52.298 52.298 0 0 0 3.612-.176c2.236-.189 4.896-.57 6.852-1.316a1.01 1.01 0 0 0 .597-.68C27.62 21.742 28 19.652 28 16s-.38-5.743-.643-6.775a1.01 1.01 0 0 0-.597-.682c-1.956-.745-4.616-1.127-6.852-1.315a52 52 0 0 0-3.831-.178h-.154l-.219.001a52.216 52.216 0 0 0-3.612.176c-2.236.19-4.896.57-6.852 1.316a1.01 1.01 0 0 0-.597.682C4.38 10.257 4 12.347 4 16s.38 5.743.643 6.775a1.01 1.01 0 0 0 .597.681c1.956.746 4.616 1.127 6.852 1.316a52 52 0 0 0 3.831.178h.072" clip-rule="evenodd"/></svg></a></li>
+                    <li class="footer__md-list-item"> <a href="https://x.com" id="Twitter" name="Twitter" target="_blank" rel="noopener noreferrer" aria-label="Visit our X account"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none"><path stroke="#858584" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11c0-2.75 2.312-5.037 5.062-5a5 5 0 0 1 4.525 3H30l-4.038 4.038A15.99 15.99 0 0 1 10 28c-4 0-5-1.5-5-1.5S9 25 11 22c0 0-8-4-6-15 0 0 5 5 11 6z"/></svg></a></li>
+                    <li class="footer__md-list-item"> <a href="https://www.instagram.com/" id="Instagram" name="Instagram" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram profile"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none"><path fill="#858584" fill-rule="evenodd" d="M16 12a4 4 0 1 0 0 8 4 4 0 0 0 0-8m-6 4a6 6 0 1 1 12 0 6 6 0 0 1-12 0" clip-rule="evenodd"/><path fill="#858584" fill-rule="evenodd" d="M10.5 5.5a5 5 0 0 0-5 5v11a5 5 0 0 0 5 5h11a5 5 0 0 0 5-5v-11a5 5 0 0 0-5-5zm-7 5a7 7 0 0 1 7-7h11a7 7 0 0 1 7 7v11a7 7 0 0 1-7 7h-11a7 7 0 0 1-7-7z" clip-rule="evenodd"/><path fill="#858584" d="M22.5 11a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/></svg></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-4-sm col-6-md col-3-lg">
+                <div class="footer__links">
+                  <p class="footer__title">Explore </p>
+                      <ul class="list">
+                        <li class="list__item"><a class="link" href="#">Marketplace</a>
+                        </li>
+                        <li class="list__item"><a class="link" href="#">Rankings</a>
+                        </li>
+                        <li class="list__item"><a class="link" href="#">Connect a wallet</a>
+                        </li>
+                      </ul>
+                </div>
+              </div>
+              <div class="col-4- col-4-md col-5-lg">
+                <div class="footer__subscribe-part">
+                  <p class="footer__title">Join our weekly digest </p>
+                  <p class="footer__subscribe-text">Get exclusive promotions & updates straight to your inbox.</p>
+                      <form class="subscribe-form js-subscribe-form" method="dialog">
+                        <div class="subscribe-form__input-wrapper">
+                              <div class="input-wrapper"> 
+                                <label for="subscribe"></label>
+                                <input class="subscribe__input js-subscribe-input" name="subscribe" type="text" placeholder="Enter Your Email Address" id="subscribe"/>
+                              </div>
+                              <button class="btn btn--subscribe js-subscribe-submit" title="Subscribe" type="submit" ...attributes="...attributes">
+                                <div class="btn__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path fill="#fff" fill-rule="evenodd" d="M1.875 4.375c0-.345.28-.625.625-.625h15c.345 0 .625.28.625.625V15a1.25 1.25 0 0 1-1.25 1.25H3.125A1.25 1.25 0 0 1 1.875 15zM3.125 5v10h13.75V5z" clip-rule="evenodd"/><path fill="#fff" fill-rule="evenodd" d="M2.04 3.953a.625.625 0 0 1 .882-.039L10 10.402l7.078-6.488a.625.625 0 1 1 .844.922l-7.5 6.875a.625.625 0 0 1-.844 0l-7.5-6.875a.625.625 0 0 1-.039-.883" clip-rule="evenodd"/></svg>
+                                </div><span class="btn__text">Subscribe</span>
+                              </button>
+                              <dialog class="modal__wrapper js-modal-success">
+                                <div class="modal__wrapper-info"> 
+                                  <p class="info-text">Email is already in use</p>
+                                  <p class="info-message">Please try another one.</p>
+                                </div>
+                                <div class="modal__wrapper-button-part"> 
+                                      <button class="btn btn--modal-closing js-close" title="Close" type="button" ...attributes="...attributes">
+                                        <div class="btn__icon"> 
+                                        </div><span class="btn__text">Close</span>
+                                      </button>
+                                </div>
+                              </dialog>
+                        </div>
+                      </form>
+                </div>
+              </div>
+            </div>
+            <div class="row">        
+              <div class="col-4-sm col-6-md col-12-lg">
+                <div class="footer__copyright"> <small class="footer__address">Ⓒ NFT Market. Use this template freely.</small></div>
+              </div>
+            </div>
+          </div>
+        </footer>
+    <script src="../../js/atoms/accordion.js" defer="defer"></script>
+    <script src="../../js/atoms/checkbox.js" defer="defer"></script>
+    <script src="../../js/atoms/burgerMenuBtn.js" defer="defer"></script>
+    <script src="../../js/molecules/filter.js" defer="defer"></script>
+    <script src="../../js/molecules/product-card.js" type="module" defer="defer"></script>
+    <script src="../../js/molecules/modalSuccess.js" defer="defer"></script>
+    <script src="../../js/molecules/search.js" type="module" defer="defer"></script>
+    <script src="../../js/molecules/form.js" defer="defer"></script>
+    <script src="../../js/organisms/main.js" defer="defer"></script>
+  </body>
+</html>

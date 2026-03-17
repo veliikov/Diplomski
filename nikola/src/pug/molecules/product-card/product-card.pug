@@ -1,0 +1,23 @@
+mixin ProductCard(eager)
+  .card.js-product-card
+    .card__image 
+      if eager
+        img(src="", alt="card" class="card__picture" loading="eager")
+      else 
+        img(src="", alt="card" class="card__picture" loading="lazy")  
+    .card__info
+      .card__product-and-creator
+        .card__heading-wrapper 
+          h2.card__header Magic Mushroom 0324 
+        .card__creator
+          img(src="", alt="user" class="card__logo" )  
+          span.card__username Shroomie
+      .card__price-total 
+        .card__price 
+          p.card__price-text Price
+          p.card__price-value 1.63 ETH
+        .card__highest-bid 
+            p.card__highest-bid-text Highest Bid
+            p.card__highest-bid-value 0.33 ETH
+      .card__button 
+        +Button("Buy Now","buy","button").btn--card-buy.js-card-buy-now

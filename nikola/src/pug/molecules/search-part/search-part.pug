@@ -1,0 +1,14 @@
+mixin SearchPart()
+  .search-wrapper.js-search-wrapper.container
+    .row
+      .col-4-sm.col-6-md.col-12-lg    
+        .search-wrapper__search 
+          h1.search-wrapper__title Browse Marketplace
+          p.search-wrapper__text Browse through more than 50k NFTs on the NFT Marketplace.
+          +Input("","Search your favourite NFTs","text","search","","input-wrapper header__search-input js-search-input")
+            button.search-btn(id="search" aria-label="search") 
+              include ../../../assets/icons/MagnifyingGlass.svg
+    .row
+      .col-4-sm.col-6-md.col-12-lg    
+        .search-wrapper__filter 
+          +FilterBtn()         

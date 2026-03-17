@@ -1,0 +1,14 @@
+mixin Checkbox(label, id)
+  .checkbox-wrapper
+    div.checkbox-box.js-checkbox(
+      role="checkbox", 
+      aria-checked="false", 
+      tabindex="0", 
+      aria-labelledby=`label-${id}`,
+      value=id
+    )
+      img.icon(src="../../assets/icons/check.svg" alt="" aria-hidden="true")
+    span.checkbox-label.js-checkbox-label(id=`label-${id}` data-target=id)= label
+
+
+    

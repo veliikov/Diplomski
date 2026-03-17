@@ -1,0 +1,39 @@
+mixin Footer()
+  footer.footer 
+    .container 
+      .row
+        .col-4-sm.col-6-md.col-4-lg
+          .footer__upper-part
+            +Logo()
+            p.footer__info NFT marketplace UI created with Anima for Figma.
+            +Link("Join our community","../../pug/pages/index.html","_self")
+            ul.footer__md-list 
+              li.footer__md-list-item 
+                a(href="https://discord.com/" id="Discord" name="Discord" target="_blank" rel="noopener noreferrer" 
+  aria-label="Visit our Discord server")
+                  include ../../../assets/icons/DiscordLogo.svg
+              li.footer__md-list-item 
+                a(href="https://www.youtube.com/" id="Youtube" name="Youtube" target="_blank" rel="noopener noreferrer" 
+  aria-label="Visit our Youtube channel")
+                  include ../../../assets/icons/YoutubeLogo.svg
+              li.footer__md-list-item 
+                a(href="https://x.com" id="Twitter" name="Twitter" target="_blank" rel="noopener noreferrer" 
+  aria-label="Visit our X account")
+                  include ../../../assets/icons/TwitterLogo.svg
+              li.footer__md-list-item 
+                a(href="https://www.instagram.com/" id="Instagram" name="Instagram" target="_blank" rel="noopener noreferrer" 
+  aria-label="Visit our Instagram profile")
+                  include ../../../assets/icons/InstagramLogo.svg
+        .col-4-sm.col-6-md.col-3-lg
+          .footer__links
+            p.footer__title Explore 
+            +LinkList(['Marketplace','Rankings','Connect a wallet'])  
+        .col-4-.col-4-md.col-5-lg
+          .footer__subscribe-part
+            p.footer__title Join our weekly digest 
+            p.footer__subscribe-text Get exclusive promotions & updates straight to your inbox.
+            +SubscribeForm()   
+      .row         
+        .col-4-sm.col-6-md.col-12-lg
+          .footer__copyright 
+           small.footer__address Ⓒ NFT Market. Use this template freely.

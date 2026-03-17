@@ -1,0 +1,91 @@
+input {
+  outline: none;
+}
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: map-get($map: $spacing-sm, $key: gap-2);
+  width: 100%;
+  position: relative;
+
+  .header__search-input {
+    font-size: map-get($map: map-get($sizes-sm, body), $key: font-size);
+    line-height: map-get($map: map-get($sizes-sm, body), $key: line-height);
+    font-family: $font-primary;
+    padding: map-get($map: $spacing-sm, $key: padding-19)
+      map-get($map: $spacing-sm, $key: padding-20);
+    border-radius: $border-radius-secondary;
+    border: $border-height-primary solid $backgorund-color-secondary;
+    background: transparent;
+    outline: none;
+    color: $text-color-fifth;
+    .input__icon {
+      position: absolute;
+    }
+  }
+
+  .subscribe__input {
+    font-size: map-get($map: map-get($sizes-sm, body), $key: font-size);
+    line-height: map-get($map: map-get($sizes-sm, body), $key: line-height);
+    border-radius: $border-radius-secondary;
+    border: $border-height-primary solid $backgorund-color-secondary;
+    font-family: $font-primary;
+    padding: map-get($map: $spacing-sm, $key: padding-12)
+      map-get($map: $spacing-sm, $key: padding-20);
+    border: $border-height-primary solid $backgorund-color-secondary;
+    color: $backgorund-color-primary;
+
+    @include breakpoint(md) {
+      padding: map-get($map: $spacing-sm, $key: padding-19)
+        map-get($map: $spacing-sm, $key: padding-20);
+    }
+
+    &--disabled {
+      color: $disabled-btn-text;
+      font-size: map-get($map: map-get($sizes-sm, body), $key: font-size);
+      line-height: map-get($map: map-get($sizes-sm, body), $key: line-height);
+      border-radius: $border-radius-secondary;
+      border: $border-height-primary solid $cta-color-secondary;
+    }
+  }
+
+  .form-input-label {
+    color: $disabled-btn-text;
+    font-family: $font-secondary;
+    font-size: map-get($map: map-get($sizes-sm, text), $key: font-size);
+    line-height: map-get($map: map-get($sizes-sm, text), $key: line-height);
+
+    &--disabled {
+      color: $disabled-btn-text;
+      font-family: $font-secondary;
+      font-size: map-get($map: map-get($sizes-sm, text), $key: font-size);
+      line-height: map-get($map: map-get($sizes-sm, text), $key: line-height);
+      color: $cta-color-secondary;
+    }
+  }
+  .form-input-text {
+    border-radius: $border-radius-tertiary;
+    border: $border-height-primary solid $backgorund-color-fifth;
+    padding: map-get($map: $spacing-sm, $key: padding-8-12-8-10);
+    font-size: map-get($map: map-get($sizes-sm, text), $key: font-size);
+    line-height: map-get($map: map-get($sizes-sm, text), $key: line-height);
+    color: $disabled-btn-text;
+    font-family: $font-secondary;
+
+    &--disabled {
+      border-radius: $border-radius-tertiary;
+      border: $border-height-primary solid $cta-color-secondary;
+      padding: map-get($map: $spacing-sm, $key: padding-8-12-8-10);
+      font-size: map-get($map: map-get($sizes-sm, text), $key: font-size);
+      line-height: map-get($map: map-get($sizes-sm, text), $key: line-height);
+      color: $disabled-btn-text;
+      font-family: $font-secondary;
+    }
+  }
+
+  .input__icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}

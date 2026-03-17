@@ -1,0 +1,92 @@
+.footer {
+  background-color: $backgorund-color-secondary;
+  padding: map-get($map: $spacing-sm, $key: padding-footer);
+  display: flex;
+  flex-direction: column;
+  border-top: 2px solid $backgorund-color-primary;
+
+  .footer__upper-part {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($map: $spacing-sm, $key: gap-20);
+    margin-bottom: map-get($map: $spacing-sm, $key: margin-30);
+
+    .footer__info {
+      font-family: $font-primary;
+      color: $text-color-fourth;
+      font-size: map-get($map: map-get($sizes-sm, body), $key: font-size);
+      line-height: map-get($map: map-get($sizes-sm, body), $key: line-height);
+    }
+    .footer__md-list {
+      display: flex;
+      gap: map-get($map: $spacing-sm, $key: gap-10);
+    }
+
+    .logo-link {
+      & svg {
+        width: 244px;
+        height: 32px;
+      }
+      @include breakpoint(lg) {
+        margin-bottom: map-get($map: $spacing-lg, $key: margin-10);
+      }
+    }
+  }
+
+  .footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($map: $spacing-sm, $key: gap-20);
+    margin-bottom: map-get($map: $spacing-sm, $key: margin-30);
+  }
+  .footer__title {
+    font-family: $font-tertiary;
+    color: $backgorund-color-tertiary;
+    font-size: map-get(
+      $map: map-get($sizes-sm, heading-large),
+      $key: font-size
+    );
+    line-height: map-get(
+      $map: map-get($sizes-sm, heading-large),
+      $key: line-height
+    );
+  }
+
+  .footer__subscribe-part {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($map: $spacing-sm, $key: gap-20);
+    margin-bottom: map-get($map: $spacing-sm, $key: margin-30);
+    .footer__subscribe-text {
+      font-family: $font-primary;
+      color: $text-color-fourth;
+    }
+
+    @include breakpoint(md) {
+      margin-bottom: map-get($map: $spacing-md, $key: margin-49);
+    }
+  }
+
+  .footer__copyright {
+    border-top: $border-height-primary solid $border-copy;
+    padding-top: map-get($map: $spacing-sm, $key: padding-20);
+
+    .footer__address {
+      font-family: $font-primary;
+      color: $text-color-fourth;
+      font-size: map-get($map: map-get($sizes-sm, caption), $key: font-size);
+      line-height: map-get(
+        $map: map-get($sizes-sm, caption),
+        $key: line-height
+      );
+    }
+  }
+
+  @include breakpoint(md) {
+    padding: map-get($map: $spacing-md, $key: padding-footer) 0;
+  }
+
+  @include breakpoint(lg) {
+    padding: map-get($map: $spacing-md, $key: padding-footer);
+  }
+}

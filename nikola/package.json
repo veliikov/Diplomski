@@ -1,0 +1,22 @@
+{
+  "name": "nikola",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/scss/style.scss:dist/css/style.css",
+    "pug": "pug -w . -o ./ -P",
+    "dev": "concurrently \"npm run sass\" \"npm run pug\"",
+    "json-server": "json-server --watch db.json --port 3000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "pug": "^3.0.3",
+    "sass": "^1.89.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

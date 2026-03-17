@@ -1,0 +1,45 @@
+doctype html 
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="description", content="NFT MARKETPLACE")
+    meta(name="author", content="Nikola Velikov")
+    title NFT Cart
+    link(rel="stylesheet", href="../../../dist/css/style.css")
+    include ../atoms/link/link
+    include ../atoms/button/button
+    include ../atoms/input/input
+    include ../atoms/logo/logo
+    include ../atoms/checkbox/checkbox
+    include ../atoms/burger-menu/burger-menu
+    include ../atoms/burger-menu-btn/burger-menu-btn
+    include ../atoms/accordion/accordion
+    include ../atoms/filter-btn/filter-btn
+    include ../molecules/form/form
+    include ../molecules/filter/filter
+    include ../molecules/modal-remove/modal-remove
+    include ../molecules/modal-success/modal-success
+    include ../molecules/subscribe-form/subscribe-form
+    include ../molecules/empty-cart-accordion-group/empty-cart-accordion-group
+    include ../molecules/search-part/search-part
+    include ../molecules/product-card/product-card
+    include ../organisms/footer/footer
+    include ../organisms/header/header
+    include ../organisms/cartMain/cartMain
+  body
+    +Header()
+    +CartMain()
+    +Footer()
+
+    script(src="../../js/atoms/checkbox.js" defer)
+    script(src="../../js/molecules/modalSuccess.js" defer)
+    script(src="../../js/molecules/form.js" defer)
+    script(src="../../js/atoms/accordion.js" defer)
+    script(src="../../js/atoms/burgerMenuBtn.js" defer)
+    script(src="../../js/organisms/cartMain.js" defer type="module")
+    script(src="../../js/molecules/modalRemove.js"  type="module")
+    script(src="../../js/molecules/inCartCard.js" type="module")
+    script(src="../../js/atoms/quantity.js" defer)
+   
+    

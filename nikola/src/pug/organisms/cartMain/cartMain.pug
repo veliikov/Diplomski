@@ -1,0 +1,22 @@
+mixin CartMain()
+  main.main.container.cartMain  
+    .row
+      .col-4-sm.col-6-md.col-12-lg 
+        .cart-page__text-part
+          h1.cart-page__title.js-title Your Cart Is Empty
+          p.cart-page__status.js-status 
+          +Button("Go back","back","","../../pug/pages/index.html","_self").btn--cart-adding.js-back-btn
+    .row.accordion__wrapper.js-accordions
+      .col-4-sm.col-6-md.col-12-lg 
+        +EmptyCartAccordionGroup()   
+    .row
+      .col-4-sm.col-6-md.col-12-lg.js-product-card-wrapper.product-card-wrapper
+        form(action="" method="dialog").modalForm.js-modalForm
+          +ModalRemove()
+    .row.js-buy-wrapper
+      .off-1-md.off-3-lg 
+      .col-4-sm.col-4-md.col-6-lg.buy-wrapper 
+        p.total Total: 
+          span.js-total-value
+        +Form("Where to send?", "Please enter your information below.")
+            

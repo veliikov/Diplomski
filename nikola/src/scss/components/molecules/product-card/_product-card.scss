@@ -1,0 +1,224 @@
+.card {
+  background-color: $backgorund-color-primary;
+  border-radius: $border-radius-secondary;
+  box-shadow: none;
+
+  .card__image {
+    width: 100%;
+    position: relative;
+
+    .card__picture {
+      width: 100%;
+      height: 100%;
+      border-top-left-radius: $border-radius-secondary;
+      border-top-right-radius: $border-radius-secondary;
+    }
+    .bin {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  .card__info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: map-get($map: $spacing-sm, $key: gap-25);
+    padding: map-get($map: $spacing-sm, $key: padding-info);
+
+    .card__header {
+      font-weight: 600;
+      font-family: $font-primary;
+      font-size: map-get(
+        $map: map-get($sizes-md, heading-medium),
+        $key: font-size
+      );
+      line-height: map-get(
+        $map: map-get($sizes-md, heading-medium),
+        $key: line-height
+      );
+      color: $text-color-fifth;
+    }
+
+    .card__product-and-creator {
+      display: flex;
+      flex-direction: column;
+      gap: map-get($map: $spacing-sm, $key: gap-artist-info);
+      .card__creator {
+        display: flex;
+        gap: map-get($map: $spacing-sm, $key: gap-artist-avatar-name);
+        align-items: center;
+
+        .card__logo {
+          border-radius: 50%;
+          width: 24px;
+          height: 24px;
+        }
+        .card__username {
+          font-family: $font-secondary;
+          font-weight: 400;
+          font-size: map-get($map: map-get($sizes-sm, body), $key: font-size);
+          line-height: map-get(
+            $map: map-get($sizes-sm, body),
+            $key: line-height
+          );
+          color: $text-color-fifth;
+        }
+      }
+    }
+    .btn--card-buy {
+      width: 160px;
+      height: 50px;
+    }
+    .card__price-total {
+      display: flex;
+      justify-content: space-between;
+
+      .card__price {
+        display: flex;
+        flex-direction: column;
+        gap: map-get($map: $spacing-sm, $key: gap-price);
+
+        .card__price-text {
+          color: $border-copy;
+          font-family: $font-secondary;
+          font-weight: 400;
+          font-size: map-get(
+            $map: map-get($sizes-sm, caption),
+            $key: font-size
+          );
+          line-height: map-get(
+            $map: map-get($sizes-sm, caption),
+            $key: line-height
+          );
+        }
+
+        .card__price-value {
+          color: $text-color-fifth;
+          font-family: $font-secondary;
+          font-weight: 400;
+          font-size: map-get(
+            $map: map-get($sizes-sm, caption),
+            $key: font-size
+          );
+          line-height: map-get(
+            $map: map-get($sizes-sm, caption),
+            $key: line-height
+          );
+        }
+      }
+      .card__total {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: map-get($map: $spacing-sm, $key: gap-price);
+
+        .card__total-text {
+          color: $border-copy;
+          font-family: $font-secondary;
+          font-weight: 400;
+          font-size: map-get(
+            $map: map-get($sizes-sm, caption),
+            $key: font-size
+          );
+          line-height: map-get(
+            $map: map-get($sizes-sm, caption),
+            $key: line-height
+          );
+        }
+
+        .card__total-value {
+          color: $text-color-fifth;
+          font-family: $font-secondary;
+          font-weight: 400;
+          font-size: map-get(
+            $map: map-get($sizes-sm, caption),
+            $key: font-size
+          );
+          line-height: map-get(
+            $map: map-get($sizes-sm, caption),
+            $key: line-height
+          );
+        }
+      }
+      .card__highest-bid {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: map-get($map: $spacing-sm, $key: gap-highest-bid);
+
+        .card__highest-bid-text {
+          color: $border-copy;
+          font-family: $font-secondary;
+          font-weight: 400;
+          font-size: map-get(
+            $map: map-get($sizes-sm, caption),
+            $key: font-size
+          );
+          line-height: map-get(
+            $map: map-get($sizes-sm, caption),
+            $key: line-height
+          );
+        }
+
+        .card__highest-bid-value {
+          color: $text-color-fifth;
+          font-family: $font-secondary;
+          font-weight: 400;
+          font-size: map-get(
+            $map: map-get($sizes-sm, caption),
+            $key: font-size
+          );
+          line-height: map-get(
+            $map: map-get($sizes-sm, caption),
+            $key: line-height
+          );
+        }
+      }
+    }
+
+    @include breakpoint(md) {
+      padding: map-get($map: $spacing-md, $key: padding-nft-info);
+
+      .card__total-value,
+      .card__price-value {
+        font-size: map-get($map: map-get($sizes-md, body), $key: font-size);
+        line-height: map-get($map: map-get($sizes-md, body), $key: line-height);
+      }
+    }
+    @include breakpoint(lg) {
+      padding: map-get($map: $spacing-lg, $key: padding-nft-info);
+    }
+  }
+  .card__quantity {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: map-get($map: $spacing-sm, $key: margin-28);
+    @include breakpoint(md) {
+      margin-bottom: map-get($map: $spacing-md, $key: margin-32);
+    }
+    @include breakpoint(lg) {
+      margin-bottom: map-get($map: $spacing-lg, $key: margin-25);
+    }
+  }
+
+  .card__button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: map-get($map: $spacing-sm, $key: margin-28);
+    @include breakpoint(md) {
+      margin-bottom: map-get($map: $spacing-md, $key: margin-32);
+    }
+    @include breakpoint(lg) {
+      margin-bottom: map-get($map: $spacing-lg, $key: margin-25);
+    }
+  }
+
+  @include breakpoint(md) {
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+}

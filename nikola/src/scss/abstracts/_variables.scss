@@ -1,0 +1,263 @@
+$max-widths: (
+  sm: 767px,
+  md: 1279px,
+  lg: 1440px,
+);
+
+//spacings
+$margins: (
+  sm: 30px,
+  md: 40px,
+  lg: 104px,
+);
+
+$gutters: (
+  sm: 12px,
+  md: 20px,
+  lg: 30px,
+);
+
+//colors
+$backgorund-color-main: rgba(133, 133, 132, 0.2);
+$backgorund-color-primary: #2b2b2b;
+$backgorund-color-secondary: #3b3b3b;
+$backgorund-color-tertiary: #ffffff;
+$backgorund-color-fourth: #1f2937;
+$backgorund-color-fifth: #f3f4f6;
+$cta-color-primary: #a259ff;
+$cta-color-secondary: #be185d;
+$disabled-state-color: #1f2937;
+$subscribe-color: rgba(190, 24, 93, 0.5);
+$text-color-secondary: #374151;
+$text-color-tertiary: #858584;
+$disabled-btn-text: #9ca3af;
+$text-color-fourth: #cccccc;
+$text-color-fifth: #ffffff;
+$text-color-hovered: #e1e0e0;
+$form-text-color: #6b7280;
+$disabled-border: #4b586d;
+$backgorund-color-fifth: #e5e7eb;
+$background-info: #e5e5e5;
+$heading-color-primary: #111827;
+$border-copy: #858584;
+
+//Spacings
+$spacing-sm: (
+  // Gaps
+  gap-search: 40px,
+  gap-cards: 30px,
+  gap-artist-info: 5px,
+  gap-artist-avatar-name: 12px,
+  gap-artist-name: 10px,
+  gap-price: 8px,
+  gap-highest-bid: 8px,
+  gap-2: 2px,
+  gap-6: 6px,
+  gap-10: 10px,
+  gap-12: 12px,
+  gap-15: 15px,
+  gap-16: 16px,
+  gap-19: 19px,
+  gap-20: 20px,
+  gap-24: 24px,
+  gap-25: 25px,
+  gap-30: 30px,
+  gap-32: 32px,
+
+  // Paddings
+  padding-footer: 40px 0px,
+  padding-form: 32px 20px,
+  padding-modal: 32px 20px,
+  padding-info: 20px 20px 25px,
+  padding-8-12-8-10: 8px 12px 8px 10px,
+  padding-8-12-10-12: 8px 12px 10px 12px,
+  padding-6: 6px,
+  padding-8: 8px,
+  padding-9: 9px,
+  padding-10: 10px,
+  padding-11: 11px,
+  padding-12: 12px,
+  padding-15: 15px,
+  padding-16: 16px,
+  padding-17: 17px,
+  padding-19: 19px,
+  padding-20: 20px,
+  padding-27: 27px,
+  padding-30: 30px,
+  padding-32: 32px,
+  padding-36: 36px,
+  padding-40: 40px,
+  padding-50: 50px,
+  padding-60: 60px,
+  padding-80: 80px,
+  padding-65: 65px,
+
+  // Margins
+  margin-16: 16px,
+  margin-20: 20px,
+  margin-22: 22px,
+  margin-28: 28px,
+  margin-30: 30px,
+  margin-44: 44px
+);
+
+$spacing-md: (
+  // Gaps
+  gap-nav-logo: 10px,
+  gap-marketplace: 12px,
+  gap-cart: 12px,
+  gap-search-container: 40px,
+  gap-image-container: 10px,
+  gap-nft-info: 25px,
+  gap-artist-info: 5px,
+  gap-artist-avatar-name: 12px,
+  gap-price: 8px,
+  gap-highest-bid: 8px,
+  gap-buy-now: 10px,
+  gap-row: 20px,
+  gap-column: 10px,
+  gap-info: 25px,
+  gap-artist-name: 12px,
+  gap-buy-btn: 10px,
+  gap-footer: 49px,
+  gap-footer-info: 30px,
+  gap-nft-marketplace-info: 20px,
+  gap-additional-info: 20px,
+  gap-icons: 10px,
+  gap-subscribe-form: 12px,
+  gap-cart-title: 8px,
+  gap-1: 10px,
+  gap-2: 2px,
+  gap-3: 20px,
+  gap-4: 4px,
+  gap-6: 6px,
+  gap-8: 8px,
+  gap-10: 10px,
+  gap-12: 12px,
+  gap-16: 16px,
+  gap-20: 20px,
+  gap-32: 32px,
+  gap-34: 34px,
+
+  // Paddings
+  padding-cart: 0 30px,
+  padding-nft-info: 20px 30px 25px 30px,
+  padding-buy-now: 0 27px,
+  padding-footer: 35px,
+  padding-form: 20px 20px,
+  padding-subscribe-form: 16px 0 16px 20px,
+  padding-cart-title: 0px 0px 16px,
+  padding-1: 5px,
+  padding-2: 10px,
+  padding-3: 15px,
+  padding-4: 20px,
+  padding-5: 30px,
+  padding-6: 40px,
+  padding-8: 8px,
+  padding-40: 40px,
+  padding-60: 60px,
+  padding-16: 16px,
+  padding-80: 80px,
+  padding-10: 10px,
+  padding-12: 12px,
+  padding-20: 20px,
+  padding-8-12-8-10: 8px 12px 8px 10px,
+  padding-8-12: 8px 12px,
+  padding-0-30: 0 30px,
+
+  // Margins
+  margin-bottom-card: 30px,
+  margin-bottom: 42px,
+  margin-1: 10px,
+  margin-2: 15px,
+  margin-3: 20px,
+  margin-4: 30px,
+  margin-17: 17px,
+  margin-49: 49px,
+  margin-32: 32px,
+  margin-34: 34px
+);
+
+$spacing-lg: (
+  //Gaps
+  gap-nav-logo: 10px,
+  gap-marketplace: 12px,
+  gap-cart: 12px,
+  gap-search-container: 40px,
+  gap-image-container: 10px,
+  gap-nft-info: 25px,
+  gap-artist-info: 5px,
+  gap-artist-avatar-name: 12px,
+  gap-price: 8px,
+  gap-highest-bid: 8px,
+  gap-buy-now: 10px,
+  gap-row: 20px,
+  gap-column: 10px,
+  gap-info: 25px,
+  gap-artist-name: 12px,
+  gap-buy-btn: 10px,
+  gap-footer: 49px,
+  gap-footer-info: 30px,
+  gap-nft-marketplace-info: 20px,
+  gap-additional-info: 20px,
+  gap-icons: 10px,
+  gap-subscribe-form: 12px,
+  gap-cart-title: 8px,
+  gap-1: 10px,
+  gap-2: 2px,
+  gap-3: 20px,
+  gap-4: 4px,
+  gap-6: 6px,
+  gap-8: 8px,
+  gap-10: 10px,
+  gap-12: 12px,
+  gap-16: 16px,
+  gap-20: 20px,
+  gap-30: 30px,
+  gap-32: 32px,
+
+  //Paddings
+  padding-cart: 0 30px,
+  padding-nft-info: 20px 30px 25px 30px,
+  padding-buy-now: 0 27px,
+  padding-footer: 40px 0,
+  padding-subscribe-form: 16px 0 16px 20px,
+  padding-cart-title: 0px 0px 16px,
+  padding-1: 5px,
+  padding-2: 10px,
+  padding-3: 15px,
+  padding-4: 20px,
+  padding-5: 30px,
+  padding-6: 40px,
+  padding-8: 8px,
+  padding-10: 10px,
+  padding-12: 12px,
+  padding-16: 16px,
+  padding-20: 20px,
+  padding-8-12-8-10: 8px 12px 8px 10px,
+  padding-8-12: 8px 12px,
+  padding-0-30: 0 30px,
+  padding-80: 80px,
+  padding-104: 104px,
+
+  //Margins
+  margin-bottom-card: 30px,
+  margin-bottom: 42px,
+  margin-1: 10px,
+  margin-2: 15px,
+  margin-3: 20px,
+  margin-4: 30px,
+  margin-25: 25px,
+  margin-10: 10px
+);
+
+//border-height
+$border-height-primary: 1px;
+$border-height-secondary: 2px;
+
+//border-radius
+$border-radius-default: 4px;
+$border-radius-fourth: 2px;
+$border-radius-secondary: 20px;
+$border-radius-tertiary: 6px;
+$border-radius-fifth: 8px;

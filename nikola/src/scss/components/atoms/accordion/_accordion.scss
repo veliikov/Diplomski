@@ -1,0 +1,68 @@
+.accordion {
+  .accordion__item {
+    background-color: $backgorund-color-tertiary;
+    border-radius: $border-radius-fifth;
+    padding: map-get($map: $spacing-sm, $key: padding-17);
+    cursor: pointer;
+
+    .accordion__heading {
+      height: 100%;
+
+      .accordion__button {
+        font-family: $font-secondary;
+        font-size: map-get($map: map-get($sizes-sm, title), $key: font-size);
+        line-height: map-get(
+          $map: map-get($sizes-sm, title),
+          $key: line-height
+        );
+        color: $text-color-secondary;
+        position: relative;
+        background: transparent;
+        border: none;
+        width: 100%;
+        height: 100%;
+        text-align: start;
+
+        cursor: pointer;
+
+        .accordion__arrow {
+          position: absolute;
+          right: 16px;
+          transition: transform 0.3s;
+        }
+
+        &[aria-expanded="true"] .accordion__arrow {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  .accordion__panel {
+    font-family: $font-secondary;
+    font-size: map-get($map: map-get($sizes-sm, title), $key: font-size);
+    line-height: map-get($map: map-get($sizes-sm, title), $key: line-height);
+    font-family: $font-secondary;
+    font-size: map-get($map: map-get($sizes-sm, title), $key: font-size);
+    line-height: map-get($map: map-get($sizes-sm, title), $key: line-height);
+    transform-origin: top;
+    opacity: 0;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease, opacity 0.3s ease;
+
+    .accordion__content {
+      overflow: hidden;
+      display: grid;
+      gap: map-get($map: $spacing-sm, $key: gap-10);
+    }
+
+    &.open {
+      opacity: 1;
+      grid-template-rows: 1fr;
+      padding: map-get($map: $spacing-sm, $key: padding-3)
+        map-get($map: $spacing-sm, $key: padding-6);
+    }
+  }
+}

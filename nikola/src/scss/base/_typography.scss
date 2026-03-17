@@ -1,0 +1,182 @@
+@font-face {
+  font-family: "WorkSans";
+  src: url("../../src/assets/fonts/WorkSans.woff2");
+}
+
+@font-face {
+  font-family: "SpaceMonoRegular";
+  src: url("../../src/assets/fonts/SpaceMonoRegular.woff2");
+}
+
+@font-face {
+  font-family: "SpaceMonoBold";
+  src: url("../../src/assets/fonts/SpaceMonoBold.woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../../src/assets/fonts/Inter.ttf");
+}
+
+html,
+* {
+  font-family: "WorkSans";
+}
+
+//fonts
+$font-primary: "WorkSans";
+$font-secondary: "SpaceMonoRegular";
+$font-tertiary: "SpaceMonoBold";
+$font-fourth: "Inter";
+
+//sm
+$sizes-sm: (
+  heading-large: (
+    font-size: 22px,
+    line-height: 160%,
+  ),
+  title-large: (
+    font-size: 28px,
+    line-height: 140%,
+  ),
+  heading-medium: (
+    font-size: 18px,
+    line-height: 28px,
+  ),
+  body: (
+    font-size: 16px,
+    line-height: 140%,
+  ),
+  caption: (
+    font-size: 12px,
+    line-height: 110%,
+  ),
+  title: (
+    font-size: 14px,
+    line-height: 20px,
+  ),
+  text: (
+    font-size: 12px,
+    line-height: 16px,
+  ),
+  label: (
+    font-size: 12px,
+    line-height: 16px,
+  ),
+  placeholder: (
+    font-size: 12px,
+    line-height: 16px,
+  ),
+  burger: (
+    font-size: 16px,
+    line-height: 16px,
+  ),
+  button: (
+    font-size: 18px,
+    line-height: 28px,
+  ),
+  accordion-title: (
+    font-size: 14px,
+    line-height: 20px,
+  ),
+  accordion-text: (
+    font-size: 14px,
+    line-height: 20px,
+  ),
+);
+
+//md
+$sizes-md: (
+  title-large: (
+    font-size: 38px,
+    line-height: 120%,
+  ),
+  heading-large: (
+    font-size: 28px,
+    line-height: 140%,
+  ),
+  heading-medium: (
+    font-size: 22px,
+    line-height: 140%,
+  ),
+  heading-small: (
+    font-size: 18px,
+    line-height: 156%,
+  ),
+  body: (
+    font-size: 16px,
+    line-height: 140%,
+  ),
+  accordion-title: (
+    font-size: 14px,
+    line-height: 143%,
+  ),
+  accordion-text: (
+    font-size: 14px,
+    line-height: 143%,
+  ),
+  button: (
+    font-size: 14px,
+    line-height: 143%,
+  ),
+  label: (
+    font-size: 12px,
+    line-height: 133%,
+  ),
+  caption: (
+    font-size: 12px,
+    line-height: 110%,
+  ),
+  placeholder: (
+    font-size: 12px,
+    line-height: 133%,
+  ),
+);
+
+//lg
+$sizes-lg: (
+  title-large: (
+    font-size: 51px,
+    line-height: 110%,
+  ),
+  heading-large: (
+    font-size: 22px,
+    line-height: 160%,
+  ),
+  heading-medium: (
+    font-size: 16px,
+    line-height: 140%,
+  ),
+  heading-small: (
+    font-size: 18px,
+    line-height: 156%,
+  ),
+  body: (
+    font-size: 16px,
+    line-height: 140%,
+  ),
+  accordion-title: (
+    font-size: 14px,
+    line-height: 20px,
+  ),
+  accordion-text: (
+    font-size: 14px,
+    line-height: 20px,
+  ),
+  button: (
+    font-size: 14px,
+    line-height: 20px,
+  ),
+  label: (
+    font-size: 12px,
+    line-height: 16px,
+  ),
+  caption: (
+    font-size: 12px,
+    line-height: 16px,
+  ),
+  placeholder: (
+    font-size: 12px,
+    line-height: 16px,
+  ),
+);

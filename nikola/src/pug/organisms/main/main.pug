@@ -1,0 +1,15 @@
+mixin Main()
+  main.main
+    .row 
+      .col-4-sm.col-6-md.col-12-lg 
+        +SearchPart()     
+    .row.plp-cards-part
+      .container
+        .col-4-sm.col-6-md.col-12-lg.js-product-card-wrapper.product-card-wrapper
+          +ProductCard(true)
+          +ProductCard(true)
+          +ProductCard()
+          +ProductCard()
+          +ProductCard()
+          +ProductCard()
+            

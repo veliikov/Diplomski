@@ -1,0 +1,8 @@
+mixin ModalRemove()
+  dialog.modal__wrapper.js-modal 
+    .modal__wrapper-info 
+      p.info-text Do you want to remove this item?
+      p.info-message This item will be removed this item from your cart.
+    .modal__wrapper-button-part 
+      +Button("Cancel","Cancel","button").btn.btn--modal.js-cancel
+      +Button("Yes, Remove","Yes, Remove","button").btn.btn--modal-closing.js-remove   
