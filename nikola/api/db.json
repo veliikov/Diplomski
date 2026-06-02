@@ -181,6 +181,11 @@
     {
       "id": "613a",
       "email": "mila@markovic.com"
+    },
+    {
+      "id": "d9b1",
+      "email": "nikola@tralala.com"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

@@ -15,7 +15,8 @@
     }
     @include breakpoint(lg) {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(280px, 560px));
+      justify-content: center;
       padding: map-get($map: $spacing-lg, $key: padding-80) 0;
     }
   }

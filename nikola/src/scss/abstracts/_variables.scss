@@ -1,7 +1,8 @@
 $max-widths: (
   sm: 767px,
   md: 1279px,
-  lg: 1440px,
+  // lg: 1440px,
+  lg: none,
 );
 
 //spacings
@@ -28,7 +29,7 @@ $cta-color-primary: #a259ff;
 $cta-color-secondary: #be185d;
 $disabled-state-color: #1f2937;
 $subscribe-color: rgba(190, 24, 93, 0.5);
-$text-color-secondary: #374151;
+$text-color-secondary: #7489aa;
 $text-color-tertiary: #858584;
 $disabled-btn-text: #9ca3af;
 $text-color-fourth: #cccccc;
