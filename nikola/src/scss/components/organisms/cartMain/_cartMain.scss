@@ -76,19 +76,55 @@ body {
   }
   .product-card-wrapper {
     position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: map-get($map: $spacing-sm, $key: gap-cards);
+    padding: map-get($map: $spacing-sm, $key: padding-40) 0;
+    width: 100%;
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(2, 1fr);
+      padding: map-get($map: $spacing-sm, $key: padding-60) 0;
+    }
+
+    @include breakpoint(lg) {
+      grid-template-columns: repeat(3, 1fr);
+      padding: map-get($map: $spacing-lg, $key: padding-80) 0;
+    }
+
     .card {
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-    }
-    .modalForm {
-      position: absolute;
       width: 100%;
       height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .card__image {
+        aspect-ratio: 375 / 320;
+      }
+
+      .card__info {
+        flex: 1;
+      }
+    }
+
+    .modalForm {
+      grid-column: 1 / -1;
+      height: 0;
+      margin: 0;
+      padding: 0;
+      border: none;
+      overflow: visible;
+      position: relative;
+      pointer-events: none;
+
       .modal__wrapper {
         display: none;
         position: fixed;
         z-index: 9999;
         background-color: $backgorund-color-tertiary;
         justify-content: center;
+        pointer-events: auto;
 
         &--visible {
           display: flex;

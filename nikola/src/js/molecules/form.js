@@ -1,7 +1,7 @@
-const form = document.querySelector(".js-form");
+const form = document.querySelector(".js-cart-form");
 const subscribeForm = document.querySelector(".js-subscribe-form");
-const subscribeInput = subscribeForm.querySelector(".js-subscribe-input");
-const subscribeBtn = subscribeForm.querySelector(".js-subscribe-submit");
+const subscribeInput = subscribeForm?.querySelector(".js-subscribe-input");
+const subscribeBtn = subscribeForm?.querySelector(".js-subscribe-submit");
 
 const validatedFields = [false, false, false, false];
 let subsValidatedField = false;
@@ -211,87 +211,249 @@ if (form) {
     }
   }
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const modal = form.querySelector(".js-modal-success");
+    validatedFields[3] = checkbox.getAttribute("aria-checked") === "true";
+    userData.isChecked = validatedFields[3];
 
-    if (isFormValid()) {
-      modal.classList.add("modal__wrapper--visible");
-      modal.showModal();
-      const closeBtn = modal.querySelector(".js-close");
-      const handleClose = async () => {
-        localStorage.setItem("numOfProducts", 0);
-        localStorage.setItem("bought", "[]");
-        localStorage.setItem("quantities", "{}");
-        localStorage.setItem("totalPrice", 0);
-        modal.close();
-        modal.classList.remove("modal__wrapper--visible");
-        closeBtn.removeEventListener("click", handleClose);
-        await register(userData);
-        form.submit();
-      };
-
-      closeBtn.addEventListener("click", handleClose);
-    } else {
+    if (!isFormValid()) {
       submit.classList.add("btn--disabled");
+      return;
     }
+
+    const { processCartCheckout } = await import("./cartCheckout.js");
+    await processCartCheckout({
+      userData,
+      submitBtn: submit,
+      registerUser: register,
+    });
   });
 }
 
 if (subscribeForm) {
-  const modal = subscribeForm.querySelector(".js-modal-success");
-  let modalDisplay = false;
-  subscribeInput.addEventListener("input", async (e) => {
-    modalDisplay = false;
-    e.preventDefault();
-    subscribeBtn.classList.remove("btn--subscribe--disabled");
+  const subscribeBlock = subscribeForm.closest(".subscribe-form-block");
+  const subscribeBackdrop = subscribeBlock?.querySelector(".js-subscribe-backdrop");
+  const confirmModal = subscribeForm.querySelector(".js-modal-subscribe-confirm");
+  const duplicateModal = subscribeForm.querySelector(".js-modal-subscribe-duplicate");
+  const successModal = subscribeForm.querySelector(".js-modal-subscribe-success");
+  const subscribeModals = () =>
+    [confirmModal, duplicateModal, successModal].filter(Boolean);
+  const confirmOkBtn = subscribeForm.querySelector(".js-subscribe-confirm-ok");
+  const successOkBtn = subscribeForm.querySelector(".js-subscribe-success-ok");
+  const hint = subscribeForm.querySelector(".js-subscribe-hint");
+  const SUBSCRIBE_SUCCESS_KEY = "nft-marketplace-subscribe-success";
+  let isSubmitting = false;
+  let pendingSubscribeEmail = null;
+
+  const isSuccessModalOpen = () =>
+    successModal?.classList.contains("modal__wrapper--visible");
+
+  const setHint = (text, isError = false) => {
+    if (!hint) return;
+    hint.textContent = text;
+    hint.classList.toggle("subscribe-form__hint--error", isError);
+    hint.classList.toggle(
+      "subscribe-form__hint--success",
+      !isError && text.includes("Ready")
+    );
+  };
+
+  const setModalMessage = (modal, message) => {
+    const el = modal?.querySelector(".js-modal-message");
+    if (el) el.textContent = message;
+  };
+
+  const toggleSubscribeBackdrop = (show) => {
+    if (!subscribeBackdrop) return;
+    subscribeBackdrop.classList.toggle("subscribe-form__backdrop--visible", show);
+    subscribeBackdrop.setAttribute("aria-hidden", show ? "false" : "true");
+  };
+
+  const showSubscribeModal = (modal) => {
+    if (!modal) return;
+    subscribeModals().forEach((m) => {
+      if (m !== modal) m.classList.remove("modal__wrapper--visible");
+    });
+    modal.classList.add("modal__wrapper--visible");
+    toggleSubscribeBackdrop(true);
+  };
+
+  const hideSubscribeModal = (modal) => {
+    if (!modal) return;
     modal.classList.remove("modal__wrapper--visible");
-    const data = await fetchSubscribers();
-    const emails = data.map((user) => user.email);
-    const format = /^[A-Za-z][A-Za-z0-9._%+-]*@[^\s@]+\.[^\s@]+$/;
-    if (!e.target.value) {
-      subscribeInput.classList.add("subscribe__input--disabled");
-      subsValidatedField = false;
-    } else if (!format.test(e.target.value)) {
-      subscribeInput.classList.add("subscribe__input--disabled");
-      subsValidatedField = false;
-    } else if (emails.includes(e.target.value)) {
-      modalDisplay = true;
-      subsValidatedField = false;
-    } else {
-      subscribeInput.classList.remove("subscribe__input--disabled");
-      subsValidatedField = true;
-    }
+    const anyOpen = subscribeModals().some((m) =>
+      m.classList.contains("modal__wrapper--visible")
+    );
+    if (!anyOpen) toggleSubscribeBackdrop(false);
+  };
+
+  const hideAllSubscribeModals = () => {
+    subscribeModals().forEach((m) => m.classList.remove("modal__wrapper--visible"));
+    toggleSubscribeBackdrop(false);
+  };
+
+  const resetAfterSuccess = () => {
+    pendingSubscribeEmail = null;
+    subscribeInput.value = "";
+    subsValidatedField = false;
+    setHint("You're in! We'll send updates to your inbox.");
+    subscribeBtn.classList.remove("btn--subscribe--disabled");
+  };
+
+  subscribeBackdrop?.addEventListener("click", () => {
+    if (isSuccessModalOpen()) return;
+    pendingSubscribeEmail = null;
+    hideAllSubscribeModals();
+    subscribeBtn.classList.remove("btn--subscribe--disabled");
   });
-  subscribeForm.addEventListener("submit", async (e) => {
+
+  duplicateModal?.querySelector(".js-close")?.addEventListener("click", (e) => {
     e.preventDefault();
-    subscribeInput.classList.remove("subscribe__input--disabled");
-    if (!subsValidatedField) {
-      if (!subscribeInput.value) {
-        subscribeBtn.classList.add("btn--subscribe--disabled");
-      } else {
-        if (modalDisplay) {
-          subscribeBtn.classList.add("btn--subscribe--disabled");
-          modal.classList.add("modal__wrapper--visible");
-          modal.showModal();
-          subscribeForm.reset();
-        } else {
-          subscribeInput.classList.add("subscribe__input--disabled");
-          subscribeBtn.classList.add("btn--subscribe--disabled");
-        }
-      }
-    } else {
-      const email = subscribeInput.value;
-      await fetch("http://localhost:3000/subscribers", {
+    hideSubscribeModal(duplicateModal);
+    subscribeBtn.classList.remove("btn--subscribe--disabled");
+  });
+
+  successOkBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    sessionStorage.removeItem(SUBSCRIBE_SUCCESS_KEY);
+    hideSubscribeModal(successModal);
+    resetAfterSuccess();
+    subscribeBtn.classList.remove("btn--subscribe--disabled");
+  });
+
+  const submitSubscribe = async (email) => {
+    if (!email || isSubmitting) return;
+
+    isSubmitting = true;
+    subscribeBtn.classList.add("btn--subscribe--disabled");
+    const btnText = subscribeBtn.querySelector(".btn__text");
+    const originalLabel = btnText?.textContent || "Subscribe";
+    if (btnText) btnText.textContent = "Sending...";
+
+    try {
+      const res = await fetch(urlSub, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
-      subscribeForm.submit();
-      subscribeForm.reset();
+
+      if (!res.ok) throw new Error("Subscribe failed");
+
+      pendingSubscribeEmail = null;
+      hideSubscribeModal(confirmModal);
+      sessionStorage.setItem(SUBSCRIBE_SUCCESS_KEY, "1");
+      setHint("You're in! We'll send updates to your inbox.");
+      showSubscribeModal(successModal);
+    } catch (error) {
+      console.error(error);
+      hideSubscribeModal(successModal);
+      showSubscribeModal(confirmModal);
+      subscribeBtn.classList.remove("btn--subscribe--disabled");
+      setHint("Could not subscribe right now. Is json-server running?", true);
+    } finally {
+      isSubmitting = false;
+      if (btnText) btnText.textContent = originalLabel;
+      confirmOkBtn?.classList.remove("btn--subscribe--disabled");
     }
+  };
+
+  confirmOkBtn?.addEventListener("click", async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const email = pendingSubscribeEmail;
+    if (!email || isSubmitting || isSuccessModalOpen()) return;
+
+    confirmOkBtn?.classList.add("btn--subscribe--disabled");
+    setModalMessage(confirmModal, `Subscribing ${email}… Please wait.`);
+
+    await submitSubscribe(email);
+  });
+
+  if (sessionStorage.getItem(SUBSCRIBE_SUCCESS_KEY)) {
+    showSubscribeModal(successModal);
+  }
+
+  subscribeInput.addEventListener("input", async () => {
+    pendingSubscribeEmail = null;
+    subscribeBtn.classList.remove("btn--subscribe--disabled");
+    subscribeInput.classList.remove("subscribe__input--disabled");
+
+    const value = subscribeInput.value.trim();
+    if (!value) {
+      subsValidatedField = false;
+      setHint("Get new drops, creator spotlights, and marketplace news every week.");
+      return;
+    }
+
+    const format = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    if (!format.test(value)) {
+      subsValidatedField = false;
+      subscribeInput.classList.add("subscribe__input--disabled");
+      setHint("Enter a valid email address (e.g. name@example.com).", true);
+      return;
+    }
+
+    try {
+      const data = await fetchSubscribers();
+      const emails = data.map((user) => user.email.toLowerCase());
+      if (emails.includes(value.toLowerCase())) {
+        subsValidatedField = false;
+        setHint("This email is already subscribed.", true);
+        return;
+      }
+    } catch {
+      /* allow subscribe if server offline */
+    }
+
+    subsValidatedField = true;
+    setHint("Ready to subscribe — hit the button when you're set.");
+  });
+
+  const openSubscribeConfirm = async () => {
+    const email = subscribeInput.value.trim();
+
+    if (!email) {
+      subscribeInput.classList.add("subscribe__input--disabled");
+      subscribeBtn.classList.add("btn--subscribe--disabled");
+      setHint("Please enter your email address.", true);
+      return;
+    }
+
+    const format = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    if (!format.test(email)) {
+      subscribeInput.classList.add("subscribe__input--disabled");
+      setHint("Enter a valid email address before subscribing.", true);
+      return;
+    }
+
+    try {
+      const data = await fetchSubscribers();
+      if (data.some((s) => s.email.toLowerCase() === email.toLowerCase())) {
+        showSubscribeModal(duplicateModal);
+        return;
+      }
+    } catch {
+      /* continue — server may be offline until OK */
+    }
+
+    if (!subsValidatedField) {
+      subsValidatedField = true;
+    }
+
+    pendingSubscribeEmail = email;
+    setModalMessage(
+      confirmModal,
+      `Subscribe ${email} to our weekly NFT digest? Click OK to confirm.`
+    );
+    showSubscribeModal(confirmModal);
+  };
+
+  subscribeForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    openSubscribeConfirm();
   });
 }

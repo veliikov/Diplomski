@@ -302,10 +302,132 @@
                         </div>
                       </div>
                     </div>
+                    <div class="card js-product-card">
+                      <div class="card__image"> <img class="card__picture" src="" alt="card" loading="lazy"/>
+                      </div>
+                      <div class="card__info">
+                        <div class="card__product-and-creator">
+                          <div class="card__heading-wrapper"> 
+                            <h2 class="card__header">Magic Mushroom 0324 </h2>
+                          </div>
+                          <div class="card__creator"><img class="card__logo" src="" alt="user"/><span class="card__username">Shroomie</span></div>
+                        </div>
+                        <div class="card__price-total"> 
+                          <div class="card__price"> 
+                            <p class="card__price-text">Price</p>
+                            <p class="card__price-value">1.63 ETH</p>
+                          </div>
+                          <div class="card__highest-bid"> 
+                            <p class="card__highest-bid-text">Highest Bid</p>
+                            <p class="card__highest-bid-value">0.33 ETH</p>
+                          </div>
+                        </div>
+                        <div class="card__button"> 
+                              <button class="btn--card-buy js-card-buy-now" title="buy" type="button" ...attributes="...attributes"><span class="btn__text">Buy Now</span>
+                              </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card js-product-card">
+                      <div class="card__image"> <img class="card__picture" src="" alt="card" loading="lazy"/>
+                      </div>
+                      <div class="card__info">
+                        <div class="card__product-and-creator">
+                          <div class="card__heading-wrapper"> 
+                            <h2 class="card__header">Magic Mushroom 0324 </h2>
+                          </div>
+                          <div class="card__creator"><img class="card__logo" src="" alt="user"/><span class="card__username">Shroomie</span></div>
+                        </div>
+                        <div class="card__price-total"> 
+                          <div class="card__price"> 
+                            <p class="card__price-text">Price</p>
+                            <p class="card__price-value">1.63 ETH</p>
+                          </div>
+                          <div class="card__highest-bid"> 
+                            <p class="card__highest-bid-text">Highest Bid</p>
+                            <p class="card__highest-bid-value">0.33 ETH</p>
+                          </div>
+                        </div>
+                        <div class="card__button"> 
+                              <button class="btn--card-buy js-card-buy-now" title="buy" type="button" ...attributes="...attributes"><span class="btn__text">Buy Now</span>
+                              </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card js-product-card">
+                      <div class="card__image"> <img class="card__picture" src="" alt="card" loading="lazy"/>
+                      </div>
+                      <div class="card__info">
+                        <div class="card__product-and-creator">
+                          <div class="card__heading-wrapper"> 
+                            <h2 class="card__header">Magic Mushroom 0324 </h2>
+                          </div>
+                          <div class="card__creator"><img class="card__logo" src="" alt="user"/><span class="card__username">Shroomie</span></div>
+                        </div>
+                        <div class="card__price-total"> 
+                          <div class="card__price"> 
+                            <p class="card__price-text">Price</p>
+                            <p class="card__price-value">1.63 ETH</p>
+                          </div>
+                          <div class="card__highest-bid"> 
+                            <p class="card__highest-bid-text">Highest Bid</p>
+                            <p class="card__highest-bid-value">0.33 ETH</p>
+                          </div>
+                        </div>
+                        <div class="card__button"> 
+                              <button class="btn--card-buy js-card-buy-now" title="buy" type="button" ...attributes="...attributes"><span class="btn__text">Buy Now</span>
+                              </button>
+                        </div>
+                      </div>
+                    </div>
               </div>
             </div>
           </div>
         </main>
+            <dialog class="modal__wrapper js-modal-notice">
+              <div class="modal__wrapper-info">
+                <p class="info-text js-notice-title"></p>
+                <p class="info-message js-notice-message"></p>
+              </div>
+              <div class="modal__wrapper-button-part">
+                    <button class="btn btn--modal js-notice-primary notice-modal__primary--hidden" title="Action" type="button" ...attributes="...attributes"><span class="btn__text">Action</span>
+                    </button>
+                    <button class="btn btn--modal-closing js-notice-close" title="Close" type="button" ...attributes="...attributes"><span class="btn__text">Close</span>
+                    </button>
+              </div>
+            </dialog>
+            <dialog class="modal__wrapper js-modal-rankings">
+              <form class="rankings-form js-rankings-form">
+                <div class="modal__wrapper-info">
+                  <p class="info-text">Share your ranking</p>
+                  <p class="info-message">Pick your favorite NFT and rate your marketplace experience. Your vote helps highlight top creators.</p>
+                  <div class="rankings-form__field">
+                    <label class="rankings-form__label" for="rankings-name">Your name</label>
+                    <input class="rankings-form__input js-rankings-name" id="rankings-name" type="text" placeholder="e.g. Nikola" required="required" maxlength="50"/>
+                  </div>
+                  <div class="rankings-form__field">
+                    <label class="rankings-form__label" for="rankings-nft">Favorite NFT</label>
+                    <select class="rankings-form__input js-rankings-nft" id="rankings-nft" required="required">
+                      <option value="" disabled="disabled" selected="selected">Select an NFT...</option>
+                    </select>
+                  </div>
+                  <div class="rankings-form__field">
+                    <label class="rankings-form__label" for="rankings-score">Score (1–10)</label>
+                    <input class="rankings-form__input js-rankings-score" id="rankings-score" type="number" min="1" max="10" placeholder="10" required="required"/>
+                  </div>
+                  <div class="rankings-form__field">
+                    <label class="rankings-form__label" for="rankings-comment">Short comment (optional)</label>
+                    <textarea class="rankings-form__textarea js-rankings-comment" id="rankings-comment" placeholder="Why is this your top pick?" maxlength="200"></textarea>
+                  </div>
+                </div>
+                <div class="modal__wrapper-button-part">
+                      <button class="btn btn--modal-closing js-rankings-submit" title="Submit ranking" type="submit" ...attributes="...attributes"><span class="btn__text">Submit ranking</span>
+                      </button>
+                      <button class="btn btn--modal js-rankings-cancel" title="Cancel" type="button" ...attributes="...attributes"><span class="btn__text">Cancel</span>
+                      </button>
+                </div>
+              </form>
+            </dialog>
         <footer class="footer"> 
           <div class="container"> 
             <div class="row">
@@ -324,11 +446,11 @@
                 <div class="footer__links">
                   <p class="footer__title">Explore </p>
                       <ul class="list">
-                        <li class="list__item"><a class="link" href="#">Marketplace</a>
+                        <li class="list__item"><a class="link" href="../../pug/pages/index.html" target="_self">Marketplace</a>
                         </li>
-                        <li class="list__item"><a class="link" href="#">Rankings</a>
+                        <li class="list__item"><a class="link js-rankings-link" href="#" aria-label="Submit a ranking">Rankings</a>
                         </li>
-                        <li class="list__item"><a class="link" href="#">Connect a wallet</a>
+                        <li class="list__item"><a class="link footer__wallet-link js-wallet-footer-link" href="#" aria-label="Connect a wallet">Connect a wallet</a>
                         </li>
                       </ul>
                 </div>
@@ -337,30 +459,54 @@
                 <div class="footer__subscribe-part">
                   <p class="footer__title">Join our weekly digest </p>
                   <p class="footer__subscribe-text">Get exclusive promotions & updates straight to your inbox.</p>
-                      <form class="subscribe-form js-subscribe-form" method="dialog">
-                        <div class="subscribe-form__input-wrapper">
-                              <div class="input-wrapper"> 
-                                <label for="subscribe"></label>
-                                <input class="subscribe__input js-subscribe-input" name="subscribe" type="text" placeholder="Enter Your Email Address" id="subscribe"/>
-                              </div>
-                              <button class="btn btn--subscribe js-subscribe-submit" title="Subscribe" type="submit" ...attributes="...attributes">
-                                <div class="btn__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path fill="#fff" fill-rule="evenodd" d="M1.875 4.375c0-.345.28-.625.625-.625h15c.345 0 .625.28.625.625V15a1.25 1.25 0 0 1-1.25 1.25H3.125A1.25 1.25 0 0 1 1.875 15zM3.125 5v10h13.75V5z" clip-rule="evenodd"/><path fill="#fff" fill-rule="evenodd" d="M2.04 3.953a.625.625 0 0 1 .882-.039L10 10.402l7.078-6.488a.625.625 0 1 1 .844.922l-7.5 6.875a.625.625 0 0 1-.844 0l-7.5-6.875a.625.625 0 0 1-.039-.883" clip-rule="evenodd"/></svg>
-                                </div><span class="btn__text">Subscribe</span>
-                              </button>
-                              <dialog class="modal__wrapper js-modal-success">
+                      <div class="subscribe-form-block">
+                        <dialog class="subscribe-form__backdrop js-subscribe-backdrop" aria-hidden="true"></dialog>
+                        <form class="subscribe-form js-subscribe-form" novalidate="novalidate">
+                          <div class="subscribe-form__input-wrapper">
+                            <div class="subscribe-form__row">
+                                  <div class="input-wrapper"> 
+                                    <label for="subscribe"></label>
+                                    <input class="subscribe__input js-subscribe-input" name="subscribe" type="email" placeholder="Enter your email" id="subscribe"/>
+                                  </div>
+                                  <button class="btn btn--subscribe js-subscribe-submit" title="Subscribe" type="submit" ...attributes="...attributes">
+                                    <div class="btn__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><path fill="#fff" fill-rule="evenodd" d="M1.875 4.375c0-.345.28-.625.625-.625h15c.345 0 .625.28.625.625V15a1.25 1.25 0 0 1-1.25 1.25H3.125A1.25 1.25 0 0 1 1.875 15zM3.125 5v10h13.75V5z" clip-rule="evenodd"/><path fill="#fff" fill-rule="evenodd" d="M2.04 3.953a.625.625 0 0 1 .882-.039L10 10.402l7.078-6.488a.625.625 0 1 1 .844.922l-7.5 6.875a.625.625 0 0 1-.844 0l-7.5-6.875a.625.625 0 0 1-.039-.883" clip-rule="evenodd"/></svg>
+                                    </div><span class="btn__text">Subscribe</span>
+                                  </button>
+                            </div>
+                            <p class="subscribe-form__hint js-subscribe-hint">Get new drops, creator spotlights, and marketplace news every week.</p>
+                          </div>
+                              <dialog class="modal__wrapper js-modal-success js-modal-subscribe-confirm">
                                 <div class="modal__wrapper-info"> 
-                                  <p class="info-text">Email is already in use</p>
-                                  <p class="info-message">Please try another one.</p>
+                                  <p class="info-text">Confirm subscription</p>
+                                  <p class="info-message info-message js-modal-message">Click OK to join our weekly NFT digest.</p>
                                 </div>
                                 <div class="modal__wrapper-button-part"> 
-                                      <button class="btn btn--modal-closing js-close" title="Close" type="button" ...attributes="...attributes">
-                                        <div class="btn__icon"> 
-                                        </div><span class="btn__text">Close</span>
+                                      <button class="btn btn--modal-closing js-subscribe-confirm-ok" title="OK" type="button" ...attributes="...attributes"><span class="btn__text">OK</span>
                                       </button>
                                 </div>
                               </dialog>
-                        </div>
-                      </form>
+                              <dialog class="modal__wrapper js-modal-success js-modal-subscribe-duplicate">
+                                <div class="modal__wrapper-info"> 
+                                  <p class="info-text">Already subscribed</p>
+                                  <p class="info-message info-message js-modal-message">This email is already on our weekly digest list.</p>
+                                </div>
+                                <div class="modal__wrapper-button-part"> 
+                                      <button class="btn btn--modal-closing js-close" title="Close" type="button" ...attributes="...attributes"><span class="btn__text">Close</span>
+                                      </button>
+                                </div>
+                              </dialog>
+                              <dialog class="modal__wrapper js-modal-success js-modal-subscribe-success">
+                                <div class="modal__wrapper-info"> 
+                                  <p class="info-text">You're subscribed!</p>
+                                  <p class="info-message info-message js-modal-message">Thanks for joining. Watch your inbox for exclusive NFT updates and promotions.</p>
+                                </div>
+                                <div class="modal__wrapper-button-part"> 
+                                      <button class="btn btn--modal-closing js-subscribe-success-ok" title="OK" type="button" ...attributes="...attributes"><span class="btn__text">OK</span>
+                                      </button>
+                                </div>
+                              </dialog>
+                        </form>
+                      </div>
                 </div>
               </div>
             </div>
@@ -375,6 +521,9 @@
     <script src="../../js/atoms/checkbox.js" defer="defer"></script>
     <script src="../../js/atoms/burgerMenuBtn.js" defer="defer"></script>
     <script src="../../js/molecules/filter.js" defer="defer"></script>
+    <script src="../../js/molecules/rankings.js" type="module" defer="defer"></script>
+    <script src="../../js/molecules/modalNotice.js" type="module" defer="defer"></script>
+    <script src="../../js/atoms/walletConnect.js" type="module" defer="defer"></script>
     <script src="../../js/molecules/product-card.js" type="module" defer="defer"></script>
     <script src="../../js/molecules/modalSuccess.js" defer="defer"></script>
     <script src="../../js/molecules/search.js" type="module" defer="defer"></script>

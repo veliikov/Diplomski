@@ -1,0 +1,9 @@
+mixin ModalTransaction()
+  dialog.modal__wrapper.js-modal-transaction
+    .modal__wrapper-info
+      p.info-text Payment successful
+      p.info-message.js-tx-message Your transaction was confirmed on Sepolia testnet.
+      p.info-message
+        a.link.js-tx-link(href="#" target="_blank" rel="noopener noreferrer") View on Etherscan
+    .modal__wrapper-button-part
+      +Button("Close", "Close", "button").btn.btn--modal-closing.js-close-tx

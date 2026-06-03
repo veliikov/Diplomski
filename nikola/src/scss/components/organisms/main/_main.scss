@@ -1,23 +1,29 @@
 .main {
   .plp-cards-part {
     background-color: $backgorund-color-secondary;
-  }
-  .col-4-sm.col-6-md.col-12-lg.product-card-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: map-get($map: $spacing-sm, $key: gap-cards);
-    padding: map-get($map: $spacing-sm, $key: padding-40) 0;
 
-    @include breakpoint(md) {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      padding: map-get($map: $spacing-sm, $key: padding-60) 0;
-    }
-    @include breakpoint(lg) {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(280px, 560px));
-      justify-content: center;
-      padding: map-get($map: $spacing-lg, $key: padding-80) 0;
+    .col-4-sm.col-6-md.col-12-lg.product-card-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: map-get($map: $spacing-sm, $key: gap-cards);
+      padding: map-get($map: $spacing-sm, $key: padding-40) 0;
+
+      @include breakpoint(md) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: map-get($map: $spacing-sm, $key: padding-60) 0;
+      }
+      @include breakpoint(lg) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: map-get($map: $spacing-lg, $key: padding-80) 0;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+      }
     }
   }
 }

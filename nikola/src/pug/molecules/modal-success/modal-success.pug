@@ -1,7 +1,9 @@
-mixin ModalSuccess(text, message)
-  dialog.modal__wrapper.js-modal-success
+mixin ModalSuccess(text, message, extraClass, closeLabel, buttonClass)
+  - closeLabel = closeLabel || "Close"
+  - buttonClass = buttonClass || "js-close"
+  dialog.modal__wrapper.js-modal-success(class=extraClass)
     .modal__wrapper-info 
       p.info-text= text
-      p.info-message= message
+      p.info-message.info-message.js-modal-message= message
     .modal__wrapper-button-part 
-      +Button("Close","Close","button").btn.btn--modal-closing.js-close  
+      +Button(closeLabel, closeLabel, "button").btn.btn--modal-closing(class=buttonClass)

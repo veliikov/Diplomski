@@ -119,6 +119,78 @@
       "price": 3.95,
       "highestBid": 1.5,
       "category": "People"
+    },
+    {
+      "id": "7",
+      "title": "Neon Fox 0412",
+      "author": {
+        "name": "Mr. Fox",
+        "avatar": {
+          "src": "../../assets/icons/ico-avatar-mrfox.svg",
+          "alt": "Avatar of Mr. Fox",
+          "title": "Mr. Fox"
+        }
+      },
+      "image": {
+        "src": "../../assets/images/neon-fox-0412.webp",
+        "alt": "Neon Fox 0412",
+        "title": "Neon Fox 0412"
+      },
+      "price": 4.1,
+      "highestBid": 1.2,
+      "category": "Animals"
+    },
+    {
+      "id": "8",
+      "title": "Cosmic Shroom 0488",
+      "author": {
+        "name": "Shroomie",
+        "avatar": {
+          "src": "../../assets/icons/ico-avatar-shroomie.svg",
+          "alt": "Avatar of Shroomie",
+          "title": "Shroomie"
+        }
+      },
+      "image": {
+        "src": "../../assets/images/cosmic-shroom-0488.webp",
+        "alt": "Cosmic Shroom 0488",
+        "title": "Cosmic Shroom 0488"
+      },
+      "price": 3.25,
+      "highestBid": 0.85,
+      "category": "Abstract"
+    },
+    {
+      "id": "9",
+      "title": "Chrome DJ Robot 0511",
+      "author": {
+        "name": "RustyRobot",
+        "avatar": {
+          "src": "../../assets/icons/ico-avatar-rustyrobot.svg",
+          "alt": "Avatar of RustyRobot",
+          "title": "RustyRobot"
+        }
+      },
+      "image": {
+        "src": "../../assets/images/chrome-dj-robot-0511.webp",
+        "alt": "Chrome DJ Robot 0511",
+        "title": "Chrome DJ Robot 0511"
+      },
+      "price": 5.15,
+      "highestBid": 2.4,
+      "category": "Robots"
+    }
+  ],
+  "transactions": [],
+  "rankings": [
+    {
+      "id": "3a30",
+      "voterName": "Nikola",
+      "nftId": "3",
+      "nftTitle": "Happy Robot 024 — BeKind2Robots (6.2 ETH)",
+      "score": 7,
+      "comment": "",
+      "createdAt": "2026-06-03T11:25:22.859Z"
     }
   ],
   "users": [
@@ -185,6 +257,46 @@
     {
       "id": "d9b1",
       "email": "nikola@tralala.com"
+    },
+    {
+      "id": "b14c",
+      "email": "nikola.velikov@merkle.com"
+    },
+    {
+      "id": "4f49",
+      "email": "nvelikov9@gmail.com"
+    },
+    {
+      "id": "47f7",
+      "email": "nvelikov9@gmail.coms"
+    },
+    {
+      "id": "508f",
+      "email": "nvelikov9@gmail.coml"
+    },
+    {
+      "id": "412e",
+      "email": "tst@gmail.com"
+    },
+    {
+      "id": "d33c",
+      "email": "dasd@fas.com"
+    },
+    {
+      "id": "7dba",
+      "email": "lara@gmail.com"
+    },
+    {
+      "id": "5d35",
+      "email": "newuser@gmail.com"
+    },
+    {
+      "id": "ee60",
+      "email": "testuser@yahoo.com"
+    },
+    {
+      "id": "29ca",
+      "email": "nnnn@sadad.cpm"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

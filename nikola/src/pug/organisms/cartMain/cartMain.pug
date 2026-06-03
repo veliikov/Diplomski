@@ -1,5 +1,6 @@
 mixin CartMain()
-  main.main.container.cartMain  
+  main.main.container.cartMain
+    +ModalTransaction()
     .row
       .col-4-sm.col-6-md.col-12-lg 
         .cart-page__text-part
@@ -17,6 +18,6 @@ mixin CartMain()
       .off-1-md.off-3-lg 
       .col-4-sm.col-4-md.col-6-lg.buy-wrapper 
         p.total Total: 
-          span.js-total-value
-        +Form("Where to send?", "Please enter your information below.")
+          span.js-total-value 0 ETH
+        +Form("Where to send?", "Please enter your information below.", "", "Buy now")
             

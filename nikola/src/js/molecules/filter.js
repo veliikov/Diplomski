@@ -55,7 +55,7 @@ btn.addEventListener("click", () => {
 
     const toDisplay = matchesCategory && matchesAuthor && matchesPrice;
 
-    card.style.display = toDisplay ? "block" : "none";
+    card.style.display = toDisplay ? "" : "none";
   });
 });
 

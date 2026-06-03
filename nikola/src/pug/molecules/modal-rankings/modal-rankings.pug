@@ -1,0 +1,22 @@
+mixin ModalRankings()
+  dialog.modal__wrapper.js-modal-rankings
+    form.rankings-form.js-rankings-form
+      .modal__wrapper-info
+        p.info-text Share your ranking
+        p.info-message Pick your favorite NFT and rate your marketplace experience. Your vote helps highlight top creators.
+        .rankings-form__field
+          label.rankings-form__label(for="rankings-name") Your name
+          input.rankings-form__input.js-rankings-name#rankings-name(type="text" placeholder="e.g. Nikola" required maxlength="50")
+        .rankings-form__field
+          label.rankings-form__label(for="rankings-nft") Favorite NFT
+          select.rankings-form__input.js-rankings-nft#rankings-nft(required)
+            option(value="" disabled selected) Select an NFT...
+        .rankings-form__field
+          label.rankings-form__label(for="rankings-score") Score (1–10)
+          input.rankings-form__input.js-rankings-score#rankings-score(type="number" min="1" max="10" placeholder="10" required)
+        .rankings-form__field
+          label.rankings-form__label(for="rankings-comment") Short comment (optional)
+          textarea.rankings-form__textarea.js-rankings-comment#rankings-comment(placeholder="Why is this your top pick?" maxlength="200")
+      .modal__wrapper-button-part
+        +Button("Submit ranking", "Submit ranking", "submit").btn.btn--modal-closing.js-rankings-submit
+        +Button("Cancel", "Cancel", "button").btn.btn--modal.js-rankings-cancel

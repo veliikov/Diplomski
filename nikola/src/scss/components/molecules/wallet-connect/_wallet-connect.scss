@@ -1,0 +1,28 @@
+.footer__wallet-link {
+  &--connected {
+    color: $cta-color-primary;
+    font-weight: 600;
+  }
+}
+
+.notice-modal__primary--hidden {
+  display: none !important;
+}
+
+.js-modal-notice {
+  display: none;
+
+  &.modal__wrapper--visible {
+    display: flex;
+  }
+}
+
+.main {
+  .js-modal-transaction {
+    display: none;
+
+    &.modal__wrapper--visible {
+      display: flex;
+    }
+  }
+}

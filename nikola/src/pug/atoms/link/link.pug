@@ -5,4 +5,11 @@ mixin LinkList(links)
   ul.list
     each link in links 
       li.list__item
-        +Link(link,'#')
+        if link === 'Connect a wallet'
+          a.link.footer__wallet-link.js-wallet-footer-link(href="#" aria-label="Connect a wallet") Connect a wallet
+        else if link === 'Marketplace'
+          +Link(link,'../../pug/pages/index.html','_self')
+        else if link === 'Rankings'
+          a.link.js-rankings-link(href="#" aria-label="Submit a ranking") Rankings
+        else
+          +Link(link,'#')

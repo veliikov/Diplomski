@@ -1,0 +1,10 @@
+{
+  "liveServer.settings.ignoreFiles": [
+    "**/api/**",
+    "**/api/db.json",
+    "**/node_modules/**"
+  ],
+  "liveServer.settings.donotWatch": [
+    "**/api/db.json"
+  ]
+}

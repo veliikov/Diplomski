@@ -1,0 +1,8 @@
+mixin ModalNotice()
+  dialog.modal__wrapper.js-modal-notice
+    .modal__wrapper-info
+      p.info-text.js-notice-title
+      p.info-message.js-notice-message
+    .modal__wrapper-button-part
+      +Button("Action", "Action", "button").btn.btn--modal.js-notice-primary.notice-modal__primary--hidden
+      +Button("Close", "Close", "button").btn.btn--modal-closing.js-notice-close

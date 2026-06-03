@@ -1,9 +1,9 @@
 include ../../atoms/checkbox/checkbox.pug
 mixin EmptyCartAccordionGroup()
   .accordion.group.js-accordion
-    +AccordionItem("How to buy?", 0)
-      p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet minus cupiditate molestias iusto et! Harum, iure eius.
-    +AccordionItem("Learn how to order", 1)
-      p Dummy content
-    +AccordionItem("Get exclusive deal", 2)
-      p DEAL
+    +AccordionItem("How do I buy an NFT?", 0)
+      p Browse the marketplace, pick an NFT you like, and click <strong>Buy Now</strong>. Before purchasing, connect your MetaMask wallet using the <strong>Connect a wallet</strong> link in the footer. Payments run on the Sepolia test network, so no real money is spent.
+    +AccordionItem("What happens after I pay?", 1)
+      p MetaMask asks you to confirm the transaction. Once it is approved on Sepolia, the NFT is added to your cart and a receipt is saved. You can review purchased items anytime on the Cart page.
+    +AccordionItem("Why do I need a crypto wallet?", 2)
+      p NFT marketplaces use wallets to identify buyers and process payments securely. MetaMask acts as your digital wallet. For this demo we use Sepolia test ETH — you can get free test coins from a Sepolia faucet and practice without risk.

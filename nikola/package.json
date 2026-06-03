@@ -6,7 +6,7 @@
     "sass": "sass --watch src/scss/style.scss:dist/css/style.css",
     "pug": "pug -w . -o ./ -P",
     "dev": "concurrently \"npm run sass\" \"npm run pug\"",
-    "json-server": "json-server --watch db.json --port 3000"
+    "json-server": "json-server --watch api/db.json --port 3000"
   },
   "keywords": [],
   "author": "",

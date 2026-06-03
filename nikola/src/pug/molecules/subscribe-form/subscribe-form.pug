@@ -1,7 +1,13 @@
 mixin SubscribeForm()
-  form.subscribe-form.js-subscribe-form(method="dialog")
-    .subscribe-form__input-wrapper
-      +Input("","Enter Your Email Address","text","subscribe","","subscribe__input js-subscribe-input")
-      +Button("Subscribe","Subscribe","submit").btn.btn--subscribe.js-subscribe-submit
-        include ../../../assets/icons/EnvelopeSimple.svg
-      +ModalSuccess("Email is already in use","Please try another one.") 
+  .subscribe-form-block
+    dialog.subscribe-form__backdrop.js-subscribe-backdrop(aria-hidden="true")
+    form.subscribe-form.js-subscribe-form(novalidate)
+      .subscribe-form__input-wrapper
+        .subscribe-form__row
+          +Input("","Enter your email","email","subscribe","","subscribe__input js-subscribe-input")
+          +Button("Subscribe","Subscribe","submit").btn.btn--subscribe.js-subscribe-submit
+            include ../../../assets/icons/EnvelopeSimple.svg
+        p.subscribe-form__hint.js-subscribe-hint Get new drops, creator spotlights, and marketplace news every week.
+      +ModalSuccess("Confirm subscription", "Click OK to join our weekly NFT digest.", "js-modal-subscribe-confirm", "OK", "js-subscribe-confirm-ok")
+      +ModalSuccess("Already subscribed", "This email is already on our weekly digest list.", "js-modal-subscribe-duplicate")
+      +ModalSuccess("You're subscribed!", "Thanks for joining. Watch your inbox for exclusive NFT updates and promotions.", "js-modal-subscribe-success", "OK", "js-subscribe-success-ok")

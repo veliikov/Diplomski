@@ -1,38 +1,100 @@
+.subscribe-form-block {
+  width: 100%;
+
+  .subscribe-form {
+    width: 100%;
+  }
+}
+
 .subscribe-form {
+  .modal__wrapper {
+    display: none;
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    z-index: 10001;
+    background-color: $backgorund-color-tertiary;
+    justify-content: center;
+    border: none;
+    max-width: 480px;
+    width: calc(100% - 40px);
+    height: fit-content;
+    pointer-events: auto;
+
+    &--visible {
+      display: flex;
+    }
+  }
+}
+
+.subscribe-form-block {
+  .subscribe-form__backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 0;
+    margin: 0;
+    max-width: none;
+    width: 100%;
+    height: 100%;
+
+    &--visible {
+      display: block;
+    }
+  }
+}
+
+.subscribe-form {
+
   .subscribe-form__input-wrapper {
-    position: relative;
     display: flex;
     flex-direction: column;
     gap: map-get($map: $spacing-sm, $key: gap-16);
 
-    .modal__wrapper {
-      display: none;
-      position: fixed;
-      z-index: 99 99;
-      background-color: $backgorund-color-tertiary;
-      justify-content: center;
+    .subscribe-form__row {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: map-get($map: $spacing-sm, $key: gap-16);
+      width: 100%;
+    }
 
-      &--visible {
-        display: flex;
+    .subscribe-form__hint {
+      font-family: $font-secondary;
+      font-size: map-get($map: map-get($sizes-sm, caption), $key: font-size);
+      line-height: map-get($map: map-get($sizes-sm, caption), $key: line-height);
+      color: $text-color-tertiary;
+
+      &--error {
+        color: $cta-color-secondary;
+      }
+
+      &--success {
+        color: $cta-color-primary;
       }
     }
+
   }
 
   @include breakpoint(md) {
-    .subscribe-form__input-wrapper {
+    .subscribe-form__row {
       position: relative;
       width: 100%;
     }
 
     .subscribe__input {
       width: 100%;
+      padding-right: 38%;
     }
 
     .btn--subscribe {
       position: absolute;
       top: 50%;
       transform: translateY(-48.8%);
-      right: 0%;
+      right: 0;
       height: calc(100% - 3px);
       width: 35%;
 

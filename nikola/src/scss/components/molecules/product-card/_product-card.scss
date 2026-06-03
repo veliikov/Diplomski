@@ -6,10 +6,14 @@
   .card__image {
     width: 100%;
     position: relative;
+    aspect-ratio: 375 / 320;
+    overflow: hidden;
 
     .card__picture {
       width: 100%;
       height: 100%;
+      object-fit: cover;
+      display: block;
       border-top-left-radius: $border-radius-secondary;
       border-top-right-radius: $border-radius-secondary;
     }

@@ -1,0 +1,53 @@
+.js-modal-rankings {
+  display: none;
+  border: none;
+  max-width: 480px;
+  width: calc(100% - 40px);
+
+  &.modal__wrapper--visible {
+    display: flex;
+  }
+}
+
+.rankings-form {
+  display: flex;
+  flex-direction: column;
+  gap: map-get($map: $spacing-sm, $key: gap-24);
+  width: 100%;
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($map: $spacing-sm, $key: gap-6);
+  }
+
+  &__label {
+    font-family: $font-secondary;
+    font-size: map-get($map: map-get($sizes-sm, caption), $key: font-size);
+    line-height: map-get($map: map-get($sizes-sm, caption), $key: line-height);
+    color: $heading-color-primary;
+  }
+
+  &__input,
+  &__textarea {
+    font-family: $font-secondary;
+    font-size: map-get($map: map-get($sizes-sm, body), $key: font-size);
+    line-height: map-get($map: map-get($sizes-sm, body), $key: line-height);
+    padding: map-get($map: $spacing-sm, $key: padding-10)
+      map-get($map: $spacing-sm, $key: padding-12);
+    border: $border-height-primary solid $backgorund-color-fifth;
+    border-radius: $border-radius-default;
+    color: $heading-color-primary;
+    background-color: $backgorund-color-tertiary;
+
+    &:focus {
+      outline: 2px solid $cta-color-primary;
+      outline-offset: 1px;
+    }
+  }
+
+  &__textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+}

@@ -24,6 +24,9 @@ html(lang="en")
     include ../molecules/empty-cart-accordion-group/empty-cart-accordion-group
     include ../molecules/search-part/search-part
     include ../molecules/product-card/product-card
+    include ../molecules/modal-notice/modal-notice
+    include ../molecules/modal-rankings/modal-rankings
+    include ../molecules/modal-transaction/modal-transaction
     include ../organisms/footer/footer
     include ../organisms/header/header
     include ../organisms/cartMain/cartMain
@@ -32,14 +35,15 @@ html(lang="en")
     +CartMain()
     +Footer()
 
+    script(src="../../js/molecules/rankings.js" type="module" defer)
+    script(src="../../js/molecules/modalNotice.js" type="module" defer)
+    script(src="../../js/molecules/modalTransaction.js" type="module" defer)
+    script(src="../../js/atoms/walletConnect.js" type="module" defer)
     script(src="../../js/atoms/checkbox.js" defer)
     script(src="../../js/molecules/modalSuccess.js" defer)
     script(src="../../js/molecules/form.js" defer)
     script(src="../../js/atoms/accordion.js" defer)
     script(src="../../js/atoms/burgerMenuBtn.js" defer)
-    script(src="../../js/organisms/cartMain.js" defer type="module")
-    script(src="../../js/molecules/modalRemove.js"  type="module")
-    script(src="../../js/molecules/inCartCard.js" type="module")
-    script(src="../../js/atoms/quantity.js" defer)
+    script(src="../../js/pages/cartPage.js" type="module" defer)
    
     

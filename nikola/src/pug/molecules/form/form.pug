@@ -1,13 +1,14 @@
-mixin Form(heading,text,action)
+mixin Form(heading, text, action, submitLabel)
   .form__wrapper
     .form-info
-      h3.form-heading=heading 
-      p.form-text=text
-    form.form.js-form(action=action, method="dialog") 
+      h3.form-heading= heading
+      p.form-text= text
+    form.form.js-form.js-cart-form(action=action, method="dialog")
       +Input("Name","Harry Potter","text","fname","form-input-label js-name-label","form-input-text js-name")
       +Input("Username","harrypotter","text","username","form-input-label js-username-label","form-input-text js-username")
       +Input("E-mail","harrypotter@email.com","email","email","form-input-label js-email-label","form-input-text js-email")
       +Checkbox("Accept terms and conditions.").form-checkbox.js-checkbox
+      p.form-payment-note.js-form-payment-note Connect your wallet via the footer before paying. Payment is processed on Sepolia testnet.
       .form__btn-div
-        +Button("Buy now","buy","submit").btn--form-buy.js-submit
-      +ModalSuccess("Congratulations!","Your order has been confirmed!")  
+        +Button(submitLabel || "Buy now", "buy", "submit").btn--form-buy.js-submit
+      +ModalSuccess("Congratulations!","Your order has been confirmed!")
