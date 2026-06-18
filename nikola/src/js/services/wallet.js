@@ -6,6 +6,19 @@ import {
 
 let cachedAddress = null;
 
+const DISCONNECT_FLAG = "walletManuallyDisconnected";
+
+const isManuallyDisconnected = () =>
+  localStorage.getItem(DISCONNECT_FLAG) === "true";
+
+const setManuallyDisconnected = (value) => {
+  if (value) {
+    localStorage.setItem(DISCONNECT_FLAG, "true");
+  } else {
+    localStorage.removeItem(DISCONNECT_FLAG);
+  }
+};
+
 export const shortenAddress = (address) =>
   `${address.slice(0, 6)}...${address.slice(-4)}`;
 
@@ -56,6 +69,7 @@ export const connectWallet = async () => {
   }
 
   cachedAddress = accounts[0];
+  setManuallyDisconnected(false);
   localStorage.setItem("walletAddress", cachedAddress);
   await ensureSepoliaNetwork();
   return cachedAddress;
@@ -63,6 +77,11 @@ export const connectWallet = async () => {
 
 export const getConnectedAddress = async () => {
   if (!isWalletInstalled()) return null;
+
+  if (isManuallyDisconnected()) {
+    cachedAddress = null;
+    return null;
+  }
 
   const accounts = await window.ethereum.request({ method: "eth_accounts" });
   if (accounts?.length) {
@@ -76,9 +95,21 @@ export const getConnectedAddress = async () => {
   return null;
 };
 
-export const disconnectWallet = () => {
+export const disconnectWallet = async () => {
   cachedAddress = null;
   localStorage.removeItem("walletAddress");
+  setManuallyDisconnected(true);
+
+  if (!isWalletInstalled()) return;
+
+  try {
+    await window.ethereum.request({
+      method: "wallet_revokePermissions",
+      params: [{ eth_accounts: {} }],
+    });
+  } catch {
+    // MetaMask may not support revokePermissions; manual flag still blocks reconnect UI.
+  }
 };
 
 export const sendEthPayment = async (amountEth) => {
@@ -117,6 +148,12 @@ export const setupWalletListeners = (onAccountsChanged) => {
   if (!isWalletInstalled()) return;
 
   window.ethereum.on("accountsChanged", (accounts) => {
+    if (isManuallyDisconnected()) {
+      cachedAddress = null;
+      onAccountsChanged?.(null);
+      return;
+    }
+
     cachedAddress = accounts[0] || null;
     if (!accounts?.length) {
       localStorage.removeItem("walletAddress");

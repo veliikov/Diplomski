@@ -60,11 +60,9 @@ if (form) {
     }
   });
 
-  usernameInput.addEventListener("input", async (e) => {
+  usernameInput.addEventListener("input", (e) => {
     e.preventDefault();
     submit.classList.remove("btn--disabled");
-    const data = await fetchUsers();
-    const usernames = data.map((user) => user.username);
     const format = /[!@#$%^&*(),.?":{}|<>_\-+=~`\\/\[\];']/;
     if (!e.target.value) {
       usernameInputLbl.textContent = `Username (Username field cannot be empty)`;
@@ -73,11 +71,6 @@ if (form) {
       validatedFields[1] = false;
     } else if (!format.test(e.target.value)) {
       usernameInputLbl.textContent = `Username (Username must contain special characters)`;
-      usernameInputLbl.classList.add("form-input-label--disabled");
-      usernameInput.classList.add("form-input-text--disabled");
-      validatedFields[1] = false;
-    } else if (usernames.includes(e.target.value)) {
-      usernameInputLbl.textContent = `Username (Username is already taken. Please choose another one.)`;
       usernameInputLbl.classList.add("form-input-label--disabled");
       usernameInput.classList.add("form-input-text--disabled");
       validatedFields[1] = false;
@@ -90,11 +83,9 @@ if (form) {
     }
   });
 
-  emailInput.addEventListener("input", async (e) => {
+  emailInput.addEventListener("input", (e) => {
     e.preventDefault();
     submit.classList.remove("btn--disabled");
-    const data = await fetchUsers();
-    const emails = data.map((user) => user.email);
     const format = /^[A-Za-z][A-Za-z0-9._%+-]*@[^\s@]+\.[^\s@]+$/;
     if (!e.target.value) {
       emailInputLbl.textContent = `E-mail (E-mail field cannot be empty)`;
@@ -103,11 +94,6 @@ if (form) {
       validatedFields[2] = false;
     } else if (!format.test(e.target.value)) {
       emailInputLbl.textContent = `E-mail (E-mail address must be valid.)`;
-      emailInputLbl.classList.add("form-input-label--disabled");
-      emailInput.classList.add("form-input-text--disabled");
-      validatedFields[2] = false;
-    } else if (emails.includes(e.target.value)) {
-      emailInputLbl.textContent = `E-mail (E-mail is already registered)`;
       emailInputLbl.classList.add("form-input-label--disabled");
       emailInput.classList.add("form-input-text--disabled");
       validatedFields[2] = false;

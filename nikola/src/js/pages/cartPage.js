@@ -152,6 +152,8 @@ function setupRemoveModal() {
 
     if (bought.length === 0) {
       showEmptyCart();
+    } else {
+      updateCartGridLayout();
     }
   });
 }
@@ -181,14 +183,28 @@ function updateCartChrome() {
   }
 }
 
+function updateCartGridLayout() {
+  const wrapper = document.querySelector(".cartMain .js-product-card-wrapper");
+  if (!wrapper) return;
+
+  const count = wrapper.querySelectorAll(".js-product-card").length;
+  if (count > 0) {
+    wrapper.dataset.cardCount = String(count);
+  } else {
+    delete wrapper.dataset.cardCount;
+  }
+}
+
 function showEmptyCart() {
   const backBtn = document.querySelector(".js-back-btn");
+  const cartActions = document.querySelector(".js-cart-actions");
   const statusText = document.querySelector(".js-title");
   const buyWrapper = document.querySelector(".js-buy-wrapper");
   const accordions = document.querySelector(".js-accordions");
 
   if (statusText) statusText.textContent = "Your Cart Is Empty";
   if (backBtn) backBtn.style.display = "";
+  if (cartActions) cartActions.classList.remove("cart-page__actions--visible");
   if (buyWrapper) buyWrapper.style.display = "none";
   if (accordions) accordions.style.display = "";
   updateCartChrome();
@@ -196,20 +212,49 @@ function showEmptyCart() {
 
 function showFilledCart() {
   const backBtn = document.querySelector(".js-back-btn");
+  const cartActions = document.querySelector(".js-cart-actions");
   const statusText = document.querySelector(".js-title");
   const buyWrapper = document.querySelector(".js-buy-wrapper");
   const accordions = document.querySelector(".js-accordions");
 
   if (statusText) statusText.textContent = "Your Cart";
   if (backBtn) backBtn.style.display = "none";
+  if (cartActions) cartActions.classList.add("cart-page__actions--visible");
   if (buyWrapper) buyWrapper.style.display = "";
   if (accordions) accordions.style.display = "none";
   updateCartChrome();
 }
 
+function clearAllCart() {
+  localStorage.setItem("numOfProducts", "0");
+  localStorage.setItem("bought", "[]");
+  localStorage.setItem("quantities", "{}");
+  localStorage.setItem("totalPrice", "0");
+
+  const wrapper = document.querySelector(".cartMain .js-product-card-wrapper");
+  wrapper?.querySelectorAll(".js-product-card").forEach((el) => el.remove());
+
+  const totalValue = document.querySelector(".cartMain .js-total-value");
+  if (totalValue) totalValue.textContent = "0 ETH";
+
+  showEmptyCart();
+}
+
+function setupClearCart() {
+  const clearBtn = document.querySelector(".js-clear-cart-btn");
+  if (!clearBtn) return;
+
+  clearBtn.addEventListener("click", () => {
+    clearAllCart();
+  });
+}
+
 function initCartPage() {
   const wrapper = document.querySelector(".cartMain .js-product-card-wrapper");
   if (!wrapper) return;
+
+  setupClearCart();
+  setupRemoveModal();
 
   let bought = [];
   try {
@@ -231,8 +276,8 @@ function initCartPage() {
     new CartCard(wrapper, item);
   });
 
+  updateCartGridLayout();
   initQuantityControls();
-  setupRemoveModal();
 }
 
 initCartPage();

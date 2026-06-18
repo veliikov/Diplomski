@@ -4,7 +4,6 @@
     "**/api/db.json",
     "**/node_modules/**"
   ],
-  "liveServer.settings.donotWatch": [
-    "**/api/db.json"
-  ]
+  "liveServer.settings.donotWatch": ["**/api/db.json"],
+  "liveServer.settings.port": 5501
 }

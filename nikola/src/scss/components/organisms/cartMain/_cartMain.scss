@@ -35,6 +35,44 @@ body {
       margin-top: map-get($map: $spacing-sm, $key: margin-32);
     }
   }
+
+  .cart-page__actions {
+    display: none;
+    grid-column: 1 / -1;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: map-get($map: $spacing-sm, $key: margin-24);
+
+    &--visible {
+      display: flex;
+    }
+  }
+
+  .btn--cart-clear {
+    cursor: pointer;
+    background-color: transparent;
+    font-family: $font-primary;
+    min-width: 160px;
+    padding: map-get($map: $spacing-sm, $key: padding-12)
+      map-get($map: $spacing-sm, $key: padding-28);
+    border: $border-height-primary solid rgba($text-color-fifth, 0.45);
+    border-radius: $border-radius-secondary;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+
+    .btn__text {
+      color: $text-color-fifth;
+      font-size: map-get($map: map-get($sizes-sm, body), $key: font-size);
+      line-height: map-get($map: map-get($sizes-sm, body), $key: line-height);
+      letter-spacing: 0.02em;
+    }
+
+    &:hover {
+      background-color: rgba($text-color-fifth, 0.08);
+      border-color: $text-color-fifth;
+    }
+  }
+
   .accordion__wrapper {
     margin-top: map-get($map: $spacing-sm, $key: margin-22);
     height: 50vh;
@@ -74,22 +112,63 @@ body {
       gap: map-get($map: $spacing-lg, $key: gap-30);
     }
   }
+
   .product-card-wrapper {
+    $cart-gap: map-get($map: $spacing-sm, $key: gap-cards);
+    $cart-card-lg: 520px;
+
     position: relative;
     display: grid;
-    grid-template-columns: 1fr;
-    gap: map-get($map: $spacing-sm, $key: gap-cards);
-    padding: map-get($map: $spacing-sm, $key: padding-40) 0;
+    gap: $cart-gap;
+    justify-content: center;
     width: 100%;
+    padding: map-get($map: $spacing-sm, $key: padding-40) 0;
+    grid-template-columns: minmax(0, 1fr);
 
     @include breakpoint(md) {
-      grid-template-columns: repeat(2, 1fr);
       padding: map-get($map: $spacing-sm, $key: padding-60) 0;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     @include breakpoint(lg) {
-      grid-template-columns: repeat(3, 1fr);
       padding: map-get($map: $spacing-lg, $key: padding-80) 0;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      max-width: calc(3 * #{$cart-card-lg} + 2 * #{$cart-gap});
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &[data-card-count="1"] {
+      @include breakpoint(md) {
+        grid-template-columns: minmax(0, min(100%, $cart-card-lg));
+      }
+
+      @include breakpoint(lg) {
+        grid-template-columns: minmax(0, $cart-card-lg);
+      }
+    }
+
+    &[data-card-count="2"] {
+      @include breakpoint(md) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 100%;
+      }
+
+      @include breakpoint(lg) {
+        grid-template-columns: repeat(2, minmax(0, $cart-card-lg));
+        max-width: calc(2 * #{$cart-card-lg} + #{$cart-gap});
+      }
+    }
+
+    .cart-page__actions,
+    .modalForm {
+      grid-column: 1 / -1;
+    }
+
+    .card.js-product-card {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
     }
 
     .card {
@@ -98,6 +177,13 @@ body {
       height: 100%;
       display: flex;
       flex-direction: column;
+      transition: transform 0.2s ease-in-out;
+
+      @include breakpoint(md) {
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
 
       .card__image {
         aspect-ratio: 375 / 320;
@@ -109,7 +195,7 @@ body {
     }
 
     .modalForm {
-      grid-column: 1 / -1;
+      width: 100%;
       height: 0;
       margin: 0;
       padding: 0;

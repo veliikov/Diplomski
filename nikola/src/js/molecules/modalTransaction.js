@@ -28,18 +28,21 @@ export const showTransactionModal = ({
   modal.showModal();
 };
 
-document.querySelector(".js-close-tx")?.addEventListener("click", () => {
+const closeTransactionModal = () => {
   if (!modal) return;
   modal.classList.remove("modal__wrapper--visible");
   modal.close();
   onCloseCallback?.();
   onCloseCallback = null;
+};
+
+modal?.addEventListener("click", (e) => {
+  if (e.target.closest(".js-close-tx")) {
+    closeTransactionModal();
+  }
 });
 
 modal?.addEventListener("cancel", (e) => {
   e.preventDefault();
-  modal.classList.remove("modal__wrapper--visible");
-  modal.close();
-  onCloseCallback?.();
-  onCloseCallback = null;
+  closeTransactionModal();
 });

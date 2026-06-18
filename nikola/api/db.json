@@ -136,7 +136,7 @@
         "alt": "Neon Fox 0412",
         "title": "Neon Fox 0412"
       },
-      "price": 4.1,
+      "price": 0.01,
       "highestBid": 1.2,
       "category": "Animals"
     },
@@ -181,7 +181,113 @@
       "category": "Robots"
     }
   ],
-  "transactions": [],
+  "transactions": [
+    {
+      "buyerWallet": "0x6795ddb2fa7e6c5f36deed24c19b4daa46228561",
+      "txHash": "0x2a2392fcee4584656489b4f7f7345286aa51a2f51a1c7951cdcaacaf458f13e4",
+      "amountEth": 0.01,
+      "status": "confirmed",
+      "items": [
+        {
+          "id": "7",
+          "title": "Neon Fox 0412",
+          "category": "Animals",
+          "price": "0.01 ETH",
+          "image": {
+            "src": "../../assets/images/neon-fox-0412.webp",
+            "alt": "Neon Fox 0412",
+            "title": "Neon Fox 0412"
+          },
+          "author": {
+            "name": "Mr. Fox",
+            "avatar": {
+              "src": "../../assets/icons/ico-avatar-mrfox.svg",
+              "alt": "Avatar of Mr. Fox",
+              "title": "Mr. Fox"
+            }
+          }
+        }
+      ],
+      "customer": {
+        "fname": "Nikola",
+        "email": "nvelikov9@gmail.com",
+        "username": "velikov0.",
+        "isChecked": true
+      },
+      "createdAt": "2026-06-18T12:30:02.512Z",
+      "id": "kOC6lYz_Puc"
+    },
+    {
+      "buyerWallet": "0x6795ddb2fa7e6c5f36deed24c19b4daa46228561",
+      "txHash": "0xcea2c0f73adb2842a8dd33cf0cc69ed2e20c6dc48cd3b40fdaf43604351e10ef",
+      "amountEth": 0.01,
+      "status": "confirmed",
+      "items": [
+        {
+          "id": "7",
+          "title": "Neon Fox 0412",
+          "category": "Animals",
+          "price": "0.01 ETH",
+          "image": {
+            "src": "../../assets/images/neon-fox-0412.webp",
+            "alt": "Neon Fox 0412",
+            "title": "Neon Fox 0412"
+          },
+          "author": {
+            "name": "Mr. Fox",
+            "avatar": {
+              "src": "../../assets/icons/ico-avatar-mrfox.svg",
+              "alt": "Avatar of Mr. Fox",
+              "title": "Mr. Fox"
+            }
+          }
+        }
+      ],
+      "customer": {
+        "fname": "Marta",
+        "email": "marta@gmial.com",
+        "username": "marta123.",
+        "isChecked": true
+      },
+      "createdAt": "2026-06-18T12:34:03.459Z",
+      "id": "ZSqLWbqA5lg"
+    },
+    {
+      "buyerWallet": "0x6795ddb2fa7e6c5f36deed24c19b4daa46228561",
+      "txHash": "0xe291e9c088a6c315fbfb99699a0926022b4024cb36f8f108f732d91c134f401b",
+      "amountEth": 0.01,
+      "status": "confirmed",
+      "items": [
+        {
+          "id": "7",
+          "title": "Neon Fox 0412",
+          "category": "Animals",
+          "price": "0.01 ETH",
+          "image": {
+            "src": "../../assets/images/neon-fox-0412.webp",
+            "alt": "Neon Fox 0412",
+            "title": "Neon Fox 0412"
+          },
+          "author": {
+            "name": "Mr. Fox",
+            "avatar": {
+              "src": "../../assets/icons/ico-avatar-mrfox.svg",
+              "alt": "Avatar of Mr. Fox",
+              "title": "Mr. Fox"
+            }
+          }
+        }
+      ],
+      "customer": {
+        "fname": "Nikola",
+        "email": "dzoni@gmail.com",
+        "username": "nikola..",
+        "isChecked": true
+      },
+      "createdAt": "2026-06-18T12:37:05.372Z",
+      "id": "W3uc2aGjvNA"
+    }
+  ],
   "rankings": [
     {
       "id": "3a30",
@@ -191,6 +297,24 @@
       "score": 7,
       "comment": "",
       "createdAt": "2026-06-03T11:25:22.859Z"
+    },
+    {
+      "id": "ad93",
+      "voterName": "Nikola",
+      "nftId": "5",
+      "nftTitle": "Dancing Robot 0323 — RustyRobot (4.3 ETH)",
+      "score": 10,
+      "comment": "efwewewf",
+      "createdAt": "2026-06-18T09:10:23.582Z"
+    },
+    {
+      "voterName": "Nikola",
+      "nftId": "3",
+      "nftTitle": "Happy Robot 024 — BeKind2Robots (6.2 ETH)",
+      "score": 3,
+      "comment": "",
+      "createdAt": "2026-06-18T12:36:11.973Z",
+      "id": "3JnbxNR76HQ"
     }
   ],
   "users": [
@@ -235,6 +359,27 @@
       "username": "nvelikov.",
       "email": "nikola.velikov@merkle.com",
       "isChecked": true
+    },
+    {
+      "fname": "Nikola",
+      "username": "velikov0.",
+      "email": "nvelikov9@gmail.com",
+      "isChecked": true,
+      "id": "LJc4xsVEyNI"
+    },
+    {
+      "fname": "Marta",
+      "username": "marta123.",
+      "email": "marta@gmial.com",
+      "isChecked": true,
+      "id": "3czBC-52Gwc"
+    },
+    {
+      "fname": "Nikola",
+      "username": "nikola..",
+      "email": "dzoni@gmail.com",
+      "isChecked": true,
+      "id": "2q8neEj_QYs"
     }
   ],
   "subscribers": [
@@ -297,6 +442,14 @@
     {
       "id": "29ca",
       "email": "nnnn@sadad.cpm"
+    },
+    {
+      "id": "3402",
+      "email": "nikolacure@gmail.com"
+    },
+    {
+      "id": "fb87",
+      "email": "marta@gmail.com"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

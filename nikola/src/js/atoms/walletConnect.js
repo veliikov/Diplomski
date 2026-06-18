@@ -75,8 +75,8 @@ const showWalletManageModal = (address) => {
     title: "Wallet connected",
     message: `Active account: ${address}`,
     primaryLabel: "Disconnect",
-    onPrimary: () => {
-      disconnectWallet();
+    onPrimary: async () => {
+      await disconnectWallet();
       setFooterWalletUI(null);
     },
   });

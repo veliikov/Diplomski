@@ -9,6 +9,75 @@ const clearCart = () => {
   localStorage.setItem("totalPrice", "0");
 };
 
+const goToHomepage = () => {
+  window.location.href = new URL("index.html", window.location.href).href;
+};
+
+const getPaymentErrorNotice = (err) => {
+  const code = err?.code;
+  const message = (
+    err?.shortMessage ||
+    err?.reason ||
+    err?.message ||
+    ""
+  ).toLowerCase();
+
+  if (
+    code === 4001 ||
+    code === "ACTION_REJECTED" ||
+    message.includes("user rejected") ||
+    message.includes("user denied")
+  ) {
+    return {
+      title: "Payment cancelled",
+      message:
+        "You declined the transaction in MetaMask. Nothing was charged — your cart is still here when you want to try again.",
+    };
+  }
+
+  if (
+    code === "INSUFFICIENT_FUNDS" ||
+    message.includes("insufficient funds") ||
+    message.includes("insufficient balance") ||
+    message.includes("exceeds balance")
+  ) {
+    return {
+      title: "Not enough Sepolia ETH",
+      message:
+        "Your wallet doesn't have enough test ETH for this order. Top up with free Sepolia ETH from a faucet, then try again.",
+      primaryLabel: "Get test ETH",
+      onPrimary: () =>
+        window.open("https://sepoliafaucet.com/", "_blank", "noopener"),
+    };
+  }
+
+  if (
+    code === 4902 ||
+    message.includes("wrong network") ||
+    message.includes("chain")
+  ) {
+    return {
+      title: "Wrong network",
+      message:
+        "Switch MetaMask to the Sepolia test network, then place your order again.",
+    };
+  }
+
+  if (err?.message === "NOT_CONNECTED") {
+    return {
+      title: "Wallet disconnected",
+      message:
+        "Your wallet is no longer connected. Use “Connect a wallet” in the footer and try again.",
+    };
+  }
+
+  return {
+    title: "Payment failed",
+    message:
+      "We couldn't complete the payment. Make sure MetaMask is on Sepolia, you have enough test ETH, and try again.",
+  };
+};
+
 export const processCartCheckout = async ({ userData, submitBtn, registerUser }) => {
   const total = parseFloat(localStorage.getItem("totalPrice") || "0");
   const bought = JSON.parse(localStorage.getItem("bought") || "[]");
@@ -87,31 +156,17 @@ export const processCartCheckout = async ({ userData, submitBtn, registerUser })
 
     if (registerUser) await registerUser(userData);
 
+    clearCart();
+
     showTransactionModal({
       hash: receipt.hash,
       productTitle: `Your cart (${bought.length} item${bought.length > 1 ? "s" : ""})`,
       amountEth: total,
-      onClose: () => {
-        clearCart();
-        window.location.href = "../../pug/pages/index.html";
-      },
+      onClose: goToHomepage,
     });
   } catch (err) {
     console.error(err);
-
-    if (err?.code === 4001) {
-      showNoticeModal({
-        title: "Payment cancelled",
-        message: "You declined the transaction in MetaMask. Your cart is unchanged.",
-      });
-    } else {
-      showNoticeModal({
-        title: "Payment failed",
-        message:
-          err?.message ||
-          "Use Sepolia testnet, ensure you have enough test ETH, and try again.",
-      });
-    }
+    showNoticeModal(getPaymentErrorNotice(err));
 
     if (submitBtn) submitBtn.disabled = false;
     if (btnText) btnText.textContent = originalText;

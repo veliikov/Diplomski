@@ -10,8 +10,10 @@ mixin CartMain()
     .row.accordion__wrapper.js-accordions
       .col-4-sm.col-6-md.col-12-lg 
         +EmptyCartAccordionGroup()   
-    .row
+    .row.js-cart-cards-row
       .col-4-sm.col-6-md.col-12-lg.js-product-card-wrapper.product-card-wrapper
+        .cart-page__actions.js-cart-actions
+          +Button("Delete all", "Delete all items from cart", "button").btn.btn--cart-clear.js-clear-cart-btn
         form(action="" method="dialog").modalForm.js-modalForm
           +ModalRemove()
     .row.js-buy-wrapper
