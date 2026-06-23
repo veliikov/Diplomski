@@ -1,2 +1,7 @@
 node_modules
 .DS_Store
+
+# Empty HTML artifacts from Pug mixin compilation (keep pages/*.html)
+nikola/src/pug/atoms/**/*.html
+nikola/src/pug/molecules/**/*.html
+nikola/src/pug/organisms/**/*.html
