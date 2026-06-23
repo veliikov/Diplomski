@@ -286,6 +286,76 @@
       },
       "createdAt": "2026-06-18T12:37:05.372Z",
       "id": "W3uc2aGjvNA"
+    },
+    {
+      "id": "7493",
+      "buyerWallet": "0x6795ddb2fa7e6c5f36deed24c19b4daa46228561",
+      "txHash": "0x6cb45c02530a294b2f2d4d00302263299d706ae8ae9b7475e298e4fdb9710397",
+      "amountEth": 0.01,
+      "status": "confirmed",
+      "items": [
+        {
+          "id": "7",
+          "title": "Neon Fox 0412",
+          "category": "Animals",
+          "price": "0.01 ETH",
+          "image": {
+            "src": "../../assets/images/neon-fox-0412.webp",
+            "alt": "Neon Fox 0412",
+            "title": "Neon Fox 0412"
+          },
+          "author": {
+            "name": "Mr. Fox",
+            "avatar": {
+              "src": "../../assets/icons/ico-avatar-mrfox.svg",
+              "alt": "Avatar of Mr. Fox",
+              "title": "Mr. Fox"
+            }
+          }
+        }
+      ],
+      "customer": {
+        "fname": "Nikola",
+        "email": "nvelikov9@gmail.com",
+        "username": "nikola.",
+        "isChecked": true
+      },
+      "createdAt": "2026-06-23T11:02:30.794Z"
+    },
+    {
+      "id": "84c9",
+      "buyerWallet": "0x6795ddb2fa7e6c5f36deed24c19b4daa46228561",
+      "txHash": "0x3b071ae2c8787828f1ff2f0807a211f88eeb7e54cb7c965251af8ae70b9aaee7",
+      "amountEth": 0.01,
+      "status": "confirmed",
+      "items": [
+        {
+          "id": "7",
+          "title": "Neon Fox 0412",
+          "category": "Animals",
+          "price": "0.01 ETH",
+          "image": {
+            "src": "../../assets/images/neon-fox-0412.webp",
+            "alt": "Neon Fox 0412",
+            "title": "Neon Fox 0412"
+          },
+          "author": {
+            "name": "Mr. Fox",
+            "avatar": {
+              "src": "../../assets/icons/ico-avatar-mrfox.svg",
+              "alt": "Avatar of Mr. Fox",
+              "title": "Mr. Fox"
+            }
+          }
+        }
+      ],
+      "customer": {
+        "fname": "Nikola",
+        "email": "nvelikov9@gmail.com",
+        "username": "nikola.velikov@merkle.com",
+        "isChecked": true
+      },
+      "createdAt": "2026-06-23T11:27:16.425Z"
     }
   ],
   "rankings": [
@@ -315,6 +385,15 @@
       "comment": "",
       "createdAt": "2026-06-18T12:36:11.973Z",
       "id": "3JnbxNR76HQ"
+    },
+    {
+      "id": "8285",
+      "voterName": "Nikola",
+      "nftId": "2",
+      "nftTitle": "Colorful Dog 0345 — Mr. Fox (5.5 ETH)",
+      "score": 5,
+      "comment": "",
+      "createdAt": "2026-06-23T11:15:08.228Z"
     }
   ],
   "users": [
@@ -380,6 +459,20 @@
       "email": "dzoni@gmail.com",
       "isChecked": true,
       "id": "2q8neEj_QYs"
+    },
+    {
+      "id": "7ef0",
+      "fname": "Nikola",
+      "username": "nikola.",
+      "email": "nvelikov9@gmail.com",
+      "isChecked": true
+    },
+    {
+      "id": "93b0",
+      "fname": "Nikola",
+      "username": "nikola.velikov@merkle.com",
+      "email": "nvelikov9@gmail.com",
+      "isChecked": true
     }
   ],
   "subscribers": [
@@ -450,6 +543,10 @@
     {
       "id": "fb87",
       "email": "marta@gmail.com"
+    },
+    {
+      "id": "1db8",
+      "email": "ana@gmail.com"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
