@@ -23,7 +23,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc && npm run build:browser",
+    "build": "tsc -p tsconfig.build.json && npm run build:browser",
     "build:browser": "esbuild src/index.ts --bundle --format=esm --platform=browser --outfile=dist/wallet-toolkit.browser.js",
     "build:browser:watch": "esbuild src/index.ts --bundle --format=esm --platform=browser --outfile=dist/wallet-toolkit.browser.js --watch",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
