@@ -41,13 +41,19 @@ getTransactionExplorerUrl("0xabc...", "sepolia");
 
 ## Browser usage (no bundler)
 
-After building the package, import the browser bundle:
+After installing, import the browser bundle:
 
 ```html
 <script type="module">
-  import { shortenAddress } from "./node_modules/wallet-toolkit/dist/wallet-toolkit.browser.js";
+  import { shortenAddress } from "wallet-toolkit/browser";
   console.log(shortenAddress("0x742d35cc6634c0532925a3b844bc454e4438f44e"));
 </script>
+```
+
+Or via the full path:
+
+```js
+import { shortenAddress } from "wallet-toolkit/dist/wallet-toolkit.browser.js";
 ```
 
 ## CLI
@@ -118,6 +124,22 @@ npx wallet-toolkit network 11155111
 | Base | 8453 | basescan.org |
 
 Network names are case-insensitive. Aliases include `mainnet`, `eth`, `matic`, `arbitrum one`.
+
+## Publishing to npm
+
+```bash
+npm login          # one-time: npm account + OTP
+npm run build
+npm test
+npm publish        # runs prepublishOnly (build + test) automatically
+```
+
+To publish updates, bump the version first:
+
+```bash
+npm version patch   # 1.0.0 → 1.0.1
+npm publish
+```
 
 ## Development
 
