@@ -3,6 +3,9 @@ import {
   SEPOLIA_CHAIN_ID_HEX,
   isMarketplaceConfigured,
 } from "../config.js";
+import { shortenAddress as toolkitShortenAddress } from "../../../node_modules/wallet-toolkit/dist/wallet-toolkit.browser.js";
+
+export { toolkitShortenAddress as shortenAddress };
 
 let cachedAddress = null;
 
@@ -18,9 +21,6 @@ const setManuallyDisconnected = (value) => {
     localStorage.removeItem(DISCONNECT_FLAG);
   }
 };
-
-export const shortenAddress = (address) =>
-  `${address.slice(0, 6)}...${address.slice(-4)}`;
 
 export const isWalletInstalled = () => typeof window.ethereum !== "undefined";
 

@@ -6,7 +6,12 @@
     "sass": "sass --watch src/scss/style.scss:dist/css/style.css",
     "pug": "pug -w . -o ./ -P",
     "dev": "concurrently \"npm run sass\" \"npm run pug\"",
-    "json-server": "json-server --watch api/db.json --port 3000"
+    "json-server": "json-server --watch api/db.json --port 3000",
+    "serve": "live-server --port=5500 --open=/src/pug/pages/index.html --watch=src,dist --ignore=api,node_modules",
+    "build:toolkit": "npm run build --prefix ../wallet-toolkit",
+    "watch:toolkit": "npm run build:browser:watch --prefix ../wallet-toolkit",
+    "prestart": "npm run build:toolkit",
+    "start": "concurrently -k -n toolkit,sass,pug,api,web -c blue,yellow,green,magenta,cyan \"npm run watch:toolkit\" \"npm run sass\" \"npm run pug\" \"npm run json-server\" \"npm run serve\""
   },
   "keywords": [],
   "author": "",
@@ -15,9 +20,11 @@
   "dependencies": {
     "json-server": "^1.0.0-beta.15",
     "pug": "^3.0.3",
-    "sass": "^1.89.0"
+    "sass": "^1.89.0",
+    "wallet-toolkit": "file:../wallet-toolkit"
   },
   "devDependencies": {
-    "concurrently": "^9.1.2"
+    "concurrently": "^9.1.2",
+    "live-server": "^1.2.2"
   }
 }

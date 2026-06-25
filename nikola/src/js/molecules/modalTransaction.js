@@ -1,4 +1,7 @@
-import { SEPOLIA_EXPLORER_TX } from "../config.js";
+import {
+  getTransactionExplorerUrl,
+  shortenAddress,
+} from "../../../node_modules/wallet-toolkit/dist/wallet-toolkit.browser.js";
 
 const modal = document.querySelector(".js-modal-transaction");
 let onCloseCallback = null;
@@ -19,8 +22,8 @@ export const showTransactionModal = ({
   }
 
   if (link && hash) {
-    link.href = `${SEPOLIA_EXPLORER_TX}${hash}`;
-    link.textContent = `View transaction ${hash.slice(0, 10)}...`;
+    link.href = getTransactionExplorerUrl(hash, "sepolia");
+    link.textContent = `View transaction ${shortenAddress(hash, 8, 6)}`;
   }
 
   onCloseCallback = onClose || null;
