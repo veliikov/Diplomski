@@ -15,7 +15,7 @@
     }
   },
   "bin": {
-    "wallet-toolkit": "./dist/cli.js"
+    "wallet-toolkit": "dist/cli.js"
   },
   "files": [
     "dist",

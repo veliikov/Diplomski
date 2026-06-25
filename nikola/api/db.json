@@ -391,6 +391,41 @@
       },
       "createdAt": "2026-06-25T09:07:41.545Z",
       "id": "KMGzMN6zFeA"
+    },
+    {
+      "buyerWallet": "0x6795ddb2fa7e6c5f36deed24c19b4daa46228561",
+      "txHash": "0xaf37d62db169b137d3db6de52a1d150c8e2ce0148491a6af9aa1bea301d04085",
+      "amountEth": 0.02,
+      "status": "confirmed",
+      "items": [
+        {
+          "id": "7",
+          "title": "Neon Fox 0412",
+          "category": "Animals",
+          "price": "0.01 ETH",
+          "image": {
+            "src": "../../assets/images/neon-fox-0412.webp",
+            "alt": "Neon Fox 0412",
+            "title": "Neon Fox 0412"
+          },
+          "author": {
+            "name": "Mr. Fox",
+            "avatar": {
+              "src": "../../assets/icons/ico-avatar-mrfox.svg",
+              "alt": "Avatar of Mr. Fox",
+              "title": "Mr. Fox"
+            }
+          }
+        }
+      ],
+      "customer": {
+        "fname": "Nikola",
+        "email": "nvelikov9@gmail.com",
+        "username": "nikola...",
+        "isChecked": true
+      },
+      "createdAt": "2026-06-25T09:36:02.229Z",
+      "id": "CwlPAXH_8ig"
     }
   ],
   "rankings": [
@@ -515,6 +550,13 @@
       "email": "nvelikov9@gmail.com",
       "isChecked": true,
       "id": "ZHsPhSNNrpM"
+    },
+    {
+      "fname": "Nikola",
+      "username": "nikola...",
+      "email": "nvelikov9@gmail.com",
+      "isChecked": true,
+      "id": "fgUBpUcr2BM"
     }
   ],
   "subscribers": [
